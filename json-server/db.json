@@ -10,7 +10,7 @@
     "latitude": 45.14852,
     "longitude": 5.7369725,
     "camions": ["cg123", "cg456", "cg789", "cg852", "cg987"],
-    "employés": ["CTR", "EBD", "SWL", "MPK", "CMJ", "MKR", "OET"]
+    "employes": ["CTR", "EBD", "SWL", "MPK", "CMJ", "MKR", "OET"]
   },
   "produits" : [
     {
