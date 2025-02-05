@@ -36,14 +36,12 @@ interface Camion{
 })
 
 export class CreateTourComponent {
-  //valeur possible de livreur a selectionner 
   Livreurs: Livreur[] = [
     {name: 'Jojo'},
     {name : 'Tiana'},
     {name: 'Fatimouta'},
   ];
 
-  //valeur possible de camion a selectionner 
   Camions: Camion[]=[
     {code: 'cg135'},
     {code: 'cg137'},
