@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CreateTourComponent } from "./create-tour/create-tour.component";
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { ViewOrderComponent } from "./view-order/view-order.component";
+import { ViewTourComponent } from "./view-tour/view-tour.component";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { ViewOrderComponent } from "./view-order/view-order.component";
     //RouterOutlet,
     CreateTourComponent,
     NavBarComponent,
-    ViewOrderComponent
+    ViewOrderComponent,
+    ViewTourComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

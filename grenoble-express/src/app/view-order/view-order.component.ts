@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';  
+import {MatButtonModule} from '@angular/material/button';
 
 interface Commande {
   reference_commande: string;
@@ -38,7 +39,7 @@ const ELEMENT_DATA: Commande[] = [
 
 @Component({
   selector: 'app-view-order',
-  imports: [MatTableModule, MatCheckboxModule,FormsModule],
+  imports: [MatTableModule, MatCheckboxModule,FormsModule,MatButtonModule],
   templateUrl: './view-order.component.html',
   styleUrls: ['./view-order.component.scss']
 })
