@@ -6,41 +6,6 @@ import {MatButtonModule} from '@angular/material/button';
 import {DeliveryService} from '../../service/delivery.service';
 import {DisplayedOrder} from '../../data/types';
 
-/*
-interface Commande {
-  reference_commande: string;
-  reference_client: string;
-  adresse: string;
-  date: string;
-  etat: string;
-  selected?: boolean;
-  ville: string;
-  codePostal:string;
-}
-
-const ELEMENT_DATA: Commande[] = [
-  {
-    reference_commande: "108",
-    reference_client: "c001",
-    adresse: "5 rue de Poisat",
-    ville:"Grenoble",
-    codePostal:"38000",
-    date: "04/01/24",
-    etat: "ouverte"
-
-  },
-  {
-    reference_commande: "109",
-    reference_client: "c002",
-    adresse: "10 avenue Jean Jaurès, Grenoble",
-    ville: "Grenoble",
-    codePostal: "38000",
-    date: "06/01/24",
-    etat: "ouverte"
-  }
-];
- */
-
 @Component({
   selector: 'app-view-order',
   imports: [
@@ -50,7 +15,7 @@ const ELEMENT_DATA: Commande[] = [
     FormsModule
   ],
   templateUrl: './view-order.component.html',
-  styleUrls: ['./view-order.component.scss']
+  styleUrls: ['./view-order.component.scss'],
 })
 export class ViewOrderComponent {
 
@@ -63,10 +28,9 @@ export class ViewOrderComponent {
   }
 
   private readonly _deliveryService = inject(DeliveryService);
-  protected readonly ordersToDisplay = signal<readonly DisplayedOrder[]>([]);
 
-  protected displayedColumns: string[] = ['select', 'reference_commande', 'reference_client', 'adresse','ville','codePostal', 'date', 'etat'];
-  protected dataSource = computed( () => this.ordersToDisplay() );
+  protected displayedColumns: string[] = ['select', 'reference_commande', 'reference_client', 'adresse', 'ville','codePostal', 'date', 'etat'];
+  protected readonly ordersToDisplay = signal<readonly DisplayedOrder[]>([]);
 
   private async getOrdersDataToDisplay() {
     const undeliveredOrders = await this._deliveryService.getUndeliveredOrders();
@@ -75,21 +39,35 @@ export class ViewOrderComponent {
     this.ordersToDisplay.set(this._deliveryService.ordersDataToDisplay(undeliveredOrders, customers));
   }
 
+
   selectAllRows(event: any) {
     const checked = event.checked;
-    this.dataSource().forEach(row => row.selected = checked);
+    this.ordersToDisplay.set(
+      this.ordersToDisplay().map(row => ({ ...row, selected: checked }))
+    );
   }
 
   isAllSelected() {
-    return this.dataSource().every(row => row.selected);
+    const data = this.ordersToDisplay();
+    return data.length > 0 && data.every(row => row.selected);
   }
 
   isSomeSelected() {
-    return this.dataSource().some(row => row.selected);
+    return this.ordersToDisplay().some(row => row.selected);
   }
 
+
   getSelectedRows() {
-    const selectedRows = this.dataSource().filter(row => row.selected);
+    const selectedRows = this.ordersToDisplay().filter(row => row.selected);
     console.log(selectedRows);
   }
+
+  toggleRowSelection(row: DisplayedOrder) {
+    this.ordersToDisplay.set(
+      this.ordersToDisplay().map(el =>
+        el === row ? { ...el, selected: !el.selected } : el
+      )
+    );
+  }
+
 }
