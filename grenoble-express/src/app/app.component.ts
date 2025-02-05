@@ -20,19 +20,9 @@ import { ViewOrderComponent } from "./components/view-order/view-order.component
 })
 export class AppComponent {
   constructor() {
-    this.getOrdersDataToDisplay().then();
-  }
-  private readonly _deliveryService = inject(DeliveryService);
-  protected readonly ordersToDisplay = signal<readonly DisplayedOrder[]>([]);
 
-  private async getOrdersDataToDisplay() {
-    const undeliveredOrders = await this._deliveryService.getUndeliveredOrders();
-    const customers = await this._deliveryService.getCustomers();
-
-    this.ordersToDisplay.set(this._deliveryService.ordersDataToDisplay(undeliveredOrders, customers));
   }
 
-  private display = effect(
-    () => console.log(this.ordersToDisplay())
-  )
+
+
 }

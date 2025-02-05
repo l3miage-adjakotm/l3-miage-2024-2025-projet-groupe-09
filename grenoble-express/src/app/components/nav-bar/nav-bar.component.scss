@@ -5,7 +5,7 @@
 }
 
 .menu-container {
-    width: 250px; 
+    width: 250px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -25,28 +25,29 @@
 .button-section {
     margin-top: 20px;
     display: flex;
-    flex-direction: column; 
-    gap: 15px; 
+    flex-direction: column;
+    gap: 15px;
 }
 
-.example-button-container {
+.view-order-header-container {
     display: flex;
-    justify-content: flex-start; 
-    width: 100%; 
+    justify-content: flex-start;
+    width: 100%;
 }
+
 
 .custom-button {
     display: flex;
     align-items: center;
-    justify-content: flex-start; 
-    gap: 8px; 
-    width: 100%; 
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
     height: 50px;
     font-size: 16px;
-    text-align: left; 
+    text-align: left;
 }
 
 .button-icon {
-    font-size: 20px; 
-    margin-left: 0; 
+    font-size: 20px;
+    margin-left: 0;
 }

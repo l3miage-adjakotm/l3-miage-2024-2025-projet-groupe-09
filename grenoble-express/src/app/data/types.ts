@@ -1,6 +1,5 @@
 import {OrderState} from './enums';
 import * as zod from 'zod';
-import {string} from 'zod';
 
 export interface Entrepot {
   jdds: readonly string[],
@@ -107,6 +106,7 @@ export interface DisplayedOrder {
   reference: string,
   etat: OrderState,
   date_de_creation: string,
+  selected?: boolean,
   client: {
     email: string,
     prenom: string,
@@ -125,7 +125,7 @@ export const orderSchema = zod.object({
   note: zod.number().nullable(),
   commentaire: zod.string().nullable(),
   client: zod.string(),
-  lignes: zod.array(string()).readonly()
+  lignes: zod.array(zod.string()).readonly()
 })
 
 export const ordersSchema = zod.array(orderSchema).readonly();

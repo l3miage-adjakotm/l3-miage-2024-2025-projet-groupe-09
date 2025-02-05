@@ -1,8 +1,8 @@
 section {
     display: table;
   }
- 
-  .example-button-container {
+
+  .view-order-header-container {
     display: flex;
     justify-content: center;
     width: 140px;
@@ -12,7 +12,7 @@ section {
     max-width: 500px;
     width: 100%;
   }
-  
+
   .example-full-width {
     width: 100%;
   }
@@ -21,16 +21,16 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; 
+    height: 100vh;
   }
-  
+
   .button-container {
     display: flex;
     justify-content: flex-end;
     width: 100%;
     padding-right: 20px;
   }
-  
+
   .form-background {
     background-color: lightblue;
     padding: 20px;
@@ -39,4 +39,3 @@ section {
   .example-form mat-form-field {
     width: 100%;
   }
-  
