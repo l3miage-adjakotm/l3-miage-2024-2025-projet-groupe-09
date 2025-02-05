@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+}
+.container app-nav-bar {
+    flex: 1; 
+}
+
+.container app-create-tour {
+    flex: 8;
+}

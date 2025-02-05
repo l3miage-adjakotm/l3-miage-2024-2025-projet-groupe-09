@@ -1,0 +1,32 @@
+<div class="container small-container">
+  <form class="example-form form-background small-form">
+    <h4>Nom de la tournée</h4>
+    <mat-form-field class="example-full-width small-field">
+      <input matInput placeholder="Entrez un nom">
+    </mat-form-field>
+
+    <h4>Livreurs</h4>
+    <mat-form-field class="small-field">
+      <mat-label>Livreurs</mat-label>
+      <mat-select>
+        @for (livreur of Livreurs; track Livreurs) {
+          <mat-option [value]="Livreurs.values">{{livreur.name}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <h4>Camions</h4>
+    <mat-form-field class="small-field">
+      <mat-label>Camions</mat-label>
+      <mat-select>
+        @for (camion of Camions; track Camions) {
+          <mat-option [value]="Camions.values">{{camion.code}}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <section class="button-container small-button">
+      <a mat-raised-button href="https://www.ol.fr/" target="_blank">Valider</a>
+    </section>
+  </form>
+</div>

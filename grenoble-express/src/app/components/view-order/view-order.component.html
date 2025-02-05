@@ -1,0 +1,59 @@
+<section>
+    <div class="example-button-container">
+        <a mat-button href="https://www.google.com/" target="_blank" class="custom-button">
+          Créer une tournée
+        </a>
+    </div>
+  </section>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="selectAllRows($event)" [checked]="isAllSelected()" [indeterminate]="isSomeSelected()"></mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox [(ngModel)]="element.selected"></mat-checkbox>
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="reference_commande">
+      <th mat-header-cell *matHeaderCellDef> Réf. Commande </th>
+      <td mat-cell *matCellDef="let element"> {{element.reference_commande}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="reference_client">
+      <th mat-header-cell *matHeaderCellDef> Réf. Client </th>
+      <td mat-cell *matCellDef="let element"> {{element.reference_client}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="adresse">
+      <th mat-header-cell *matHeaderCellDef> Adresse </th>
+      <td mat-cell *matCellDef="let element"> {{element.adresse}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ville">
+        <th mat-header-cell *matHeaderCellDef> Ville </th>
+        <td mat-cell *matCellDef="let element"> {{element.adresse}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="codePostal">
+        <th mat-header-cell *matHeaderCellDef> codePostal </th>
+        <td mat-cell *matCellDef="let element"> {{element.adresse}} </td>
+      </ng-container>
+  
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="etat">
+      <th mat-header-cell *matHeaderCellDef> État </th>
+      <td mat-cell *matCellDef="let element"> {{element.etat}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
