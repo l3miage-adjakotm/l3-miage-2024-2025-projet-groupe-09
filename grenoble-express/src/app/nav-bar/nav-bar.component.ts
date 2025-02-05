@@ -10,6 +10,6 @@ import { MatMenuModule } from '@angular/material/menu';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
   imports: [MatToolbarModule, MatButtonModule, MatIconModule,MatMenuModule],})
-export class NavBarComponent {
+export class NavBarComponent {
 
 }
