@@ -1,0 +1,59 @@
+/* Structure générale de la page */
+.page-container {
+    display: flex;
+    min-height: 100vh; /* Prend toute la hauteur de l'écran */
+}
+
+/* Colonne menu + boutons */
+.menu-container {
+    width: 250px; /* Largeur fixe pour le menu */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Aligner l'icône et le titre */
+.example-button-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Style du titre "Menu" */
+.menu-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Ajouter un espace entre le menu et les boutons */
+.button-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; /* Aligne les boutons verticalement */
+    gap: 15px; /* Espacement uniforme entre les boutons */
+}
+
+/* Style des boutons */
+.example-button-container {
+    display: flex;
+    justify-content: flex-start; /* Aligner les boutons à gauche */
+    width: 100%; /* Les boutons prennent toute la largeur disponible */
+}
+
+/* Personnalisation des boutons */
+.custom-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Assure que tout commence à gauche */
+    gap: 8px; /* Espacement entre l'icône et le texte */
+    width: 100%; /* Prend toute la largeur disponible */
+    height: 50px;
+    font-size: 16px;
+    text-align: left; /* Texte aligné à gauche */
+}
+
+/* Ajuster la taille de l'icône */
+.button-icon {
+    font-size: 20px; /* Taille de l'icône */
+    margin-left: 0; /* Pas d'espace à gauche de l'icône */
+}
