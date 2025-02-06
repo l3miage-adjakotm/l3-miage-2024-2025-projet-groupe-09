@@ -6,7 +6,7 @@ import {
   Employee,
   employeesSchema,
   Truck,
-  trucksSchema, Tour, tourSchema, toursSchema
+  trucksSchema, Tour, tourSchema, toursSchema, Entrepot, entrepotSchema
 } from '../data/types';
 
 export function parseOrders(data: unknown): Promise<readonly Order[]> {
@@ -31,4 +31,8 @@ export function parseTour(data: unknown): Promise<Tour> {
 
 export function parseTours(data: unknown): Promise<readonly Tour[]> {
   return toursSchema.parseAsync(data);
+}
+
+export function parseStore(data: unknown): Promise<Entrepot> {
+  return entrepotSchema.parseAsync(data);
 }

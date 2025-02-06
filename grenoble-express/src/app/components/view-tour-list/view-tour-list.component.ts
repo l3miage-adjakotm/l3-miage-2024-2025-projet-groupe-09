@@ -7,32 +7,6 @@ import {DeliveryService} from '../../service/delivery.service';
 import {Tour} from '../../data/types';
 import {TitleCasePipe} from '@angular/common';
 
-interface Commande {
-  nom_tournee: string;
-  livreurs: string;
-  camion: string;
-  date: string;
-  id: string;
-}
-const ELEMENT_DATA: Commande[] = [
-  {
-    id: "1",
-    nom_tournee: "Grenoble",
-    livreurs: "Joran,Benjamin",
-    camion: "AB-123-CD",
-    date: "04/01/24",
-
-  },
-  {
-    id: "2",
-    nom_tournee: "Grenoble",
-    livreurs: "Fatimouta",
-    camion: "MN-852-QR",
-    date: "06/11/24",
-
-  },
-];
-
 @Component({
   selector: 'app-view-tour-list',
   imports: [
@@ -47,7 +21,6 @@ const ELEMENT_DATA: Commande[] = [
 })
 export class ViewTourListComponent implements OnInit {
   displayedColumns: string[] = ['nom_tournee', 'livreurs', 'camion', 'date', 'action'];
-  dataSource = ELEMENT_DATA;
 
   private _router = inject(Router);
   private _deliveryService = inject(DeliveryService);
@@ -55,7 +28,6 @@ export class ViewTourListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTours();
-    console.log(this.tours());
   }
 
   private getTours() {

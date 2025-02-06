@@ -98,7 +98,7 @@ export interface Truck {
   kilometrage: number,
   entrepot: string,
   type: string,
-  id: string
+  id?: string
 }
 
 export interface TruckType {
@@ -194,7 +194,7 @@ export const truckSchema = zod.object({
   kilometrage: zod.number(),
   entrepot: zod.string(),
   type: zod.string(),
-  id: zod.string()
+  id: zod.string().optional()
 });
 
 export const trucksSchema = zod.array(truckSchema).readonly();
@@ -217,10 +217,24 @@ export const employeesSchema = zod.array(employeeSchema).readonly();
 export const tourSchema = zod.object({
   id: zod.string().optional(),
   name: zod.string(),
-  orders: zod.array(displayOrderSchema),
+  orders: zod.array(displayOrderSchema).readonly(),
   date: zod.string(),
   truck: truckSchema,
   delivers: zod.array(employeeSchema).readonly()
 })
 
 export const toursSchema = zod.array(tourSchema).readonly();
+
+export const entrepotSchema = zod.object({
+  jdds: zod.array(zod.string()).readonly(),
+  nom: zod.string(),
+  lettre: zod.string(),
+  photo: zod.string(),
+  adresse: zod.string(),
+  code_postal: zod.string(),
+  ville: zod.string(),
+  latitude: zod.number(),
+  longitude: zod.number(),
+  camions: zod.array(zod.string()).readonly(),
+  employes: zod.array(zod.string()).readonly()
+})

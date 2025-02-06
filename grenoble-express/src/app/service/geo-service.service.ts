@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import { GeoJSON2DPointSchema, GeoJSON2DPoint, GeoJSON2DMultiLineString, GeoJSON2DLineStringSchema, GeoJSONLineStringSchema} from 'zod-geojson';
-import { LatLng } from 'leaflet';
-import { GeoCodePropertiesSchema,getParserJSONFeatureCollection,PropertiesSchema} from './geojsondef';
-import { FeatureCollection, LineString} from 'geojson';
+import {Injectable} from '@angular/core';
+import {GeoJSON2DMultiLineString, GeoJSON2DPointSchema, GeoJSONLineStringSchema} from 'zod-geojson';
+import {LatLng} from 'leaflet';
+import {GeoCodePropertiesSchema, getParserJSONFeatureCollection, PropertiesSchema} from '../data/geojsondef';
 
 
 @Injectable({
@@ -25,42 +24,42 @@ export class GeoServiceService {
         throw new Error('Erreur: mauvais type de données');
       }
     }
-    
+
     else {
       throw new Error('Erreur: Failed to fetch data');
     }
-    return donn.features.length>0? donn.features.map((feature: any) => feature.properties.label) : ["Aucune adresse trouvée"]; 
+    return donn.features.length>0? donn.features.map((feature: any) => feature.properties.label) : ["Aucune adresse trouvée"];
   }
-      
-  async geocode(adiresi: string): Promise<LatLng>{
-    var monadresse = adiresi.replaceAll(' ', '+');
-    monadresse = monadresse.toLocaleLowerCase();
-    monadresse = monadresse.replace('é', 'e');
-    monadresse = monadresse.replace('è', 'e');
-    console.log(monadresse);
-    var latetlong;
-    
-    var donnees = await fetch('https://api-adresse.data.gouv.fr/search/?q='+monadresse);
+
+  // private toAscii(str: string) {
+  //   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  // }
+
+  async geocode(address: string): Promise<LatLng>{
+      let monadresse = address.replaceAll(' ', '+').toLowerCase();
+      let latetlong;
+
+      let donnees = await fetch('https://api-adresse.data.gouv.fr/search/?q='+monadresse);
+
       if (donnees.status == 200) {
         latetlong = donnees.json();
       }
       else {
         throw new Error('Erreur: Failed to fetch data');
       }
-    var finlatetlong = latetlong == undefined ? Promise.resolve(new LatLng(0, 0)) : latetlong.then((data) => {
-      if (data.features.length > 0) {
-        return new LatLng(data.features[0].geometry.coordinates[1], data.features[0].geometry.coordinates[0]);
-      }
-      else {
-        throw new Error('Erreur: Aucune adresse trouvée');
-      }
-    });
-  return finlatetlong;  
+
+      return latetlong == undefined ? Promise.resolve(new LatLng(0, 0)) : latetlong.then((data) => {
+          if (data.features.length > 0) {
+            return new LatLng(data.features[0].geometry.coordinates[1], data.features[0].geometry.coordinates[0]);
+          } else {
+            throw new Error('Erreur: Aucune adresse trouvée');
+          }
+        });
   }
-  
+
   public async getItinerary(liste: [number, number][]): Promise<GeoJSON2DMultiLineString>{
-    var donn;
-    var fetr = await fetch(
+    let donn;
+    let fetr = await fetch(
       "https://api.openrouteservice.org/v2/directions/driving-car/geojson",
       {
         method: "POST",
@@ -73,11 +72,11 @@ export class GeoServiceService {
         })
       }
     );
-  
+
     if (fetr.status == 200) {
       donn = await fetr.json();
-      var monparser = getParserJSONFeatureCollection(GeoJSONLineStringSchema,PropertiesSchema);
-      var parsedData = await monparser(donn);
+      let monparser = getParserJSONFeatureCollection(GeoJSONLineStringSchema,PropertiesSchema);
+      let parsedData = await monparser(donn);
       if (parsedData.type!='FeatureCollection') {
         throw new Error('Erreur: mauvais type de données');
       }
@@ -87,7 +86,7 @@ export class GeoServiceService {
     }
     donn = await donn;
     if (donn.features.length > 0) {
-      var _coordinates = donn.features.map((m: any) => m.geometry.coordinates);
+      let _coordinates = donn.features.map((m: any) => m.geometry.coordinates);
       return {coordinates: _coordinates,type:'MultiLineString'};
     }
     return Promise.resolve(donn);
@@ -117,9 +116,5 @@ export class GeoServiceService {
       return donn;
     }
     return Promise.resolve(donn);
-  }
-
-  getTourneeFromJson() {
-    
   }
 }

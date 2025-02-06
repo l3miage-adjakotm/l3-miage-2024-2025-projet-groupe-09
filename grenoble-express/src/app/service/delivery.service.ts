@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {changeOrderState, readOrders} from '../API/orders';
-import {Customer, DisplayedOrder, Employee, Order, Tour, Truck} from '../data/types';
+import {Customer, DisplayedOrder, Employee, Entrepot, Order, Tour, Truck} from '../data/types';
 import {readCustomers} from '../API/custormer';
 import {OrderState} from '../data/enums';
 import {readEmployes} from '../API/employee';
 import {readTrucks} from '../API/truck';
-import {createTour, readTours} from '../API/tour';
+import {createTour, readTourById, readTours} from '../API/tour';
+import {readStore} from '../API/store';
 
 @Injectable({
   providedIn: 'root'
@@ -74,7 +75,11 @@ export class DeliveryService {
     return readTours();
   }
 
-  public getTourById() {
+  public getTourById(id: string): Promise<Tour> {
+    return readTourById(id);
+  }
 
+  public getStore(): Promise<Entrepot> {
+    return readStore();
   }
 }

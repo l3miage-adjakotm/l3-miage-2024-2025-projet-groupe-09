@@ -36,8 +36,10 @@ export function readTourById(id: string): Promise<Tour> {
   ).then(
     res => res.status === 200 ? res.json() : Promise.reject(new Error(`${res.status} ${res.statusText}`))
   ).then(
-    parseTour
+      res => res[0]
+  ).then(
+      parseTour
   ).catch(
-    error => Promise.reject(error)
+      error => Promise.reject(error)
   )
 }
