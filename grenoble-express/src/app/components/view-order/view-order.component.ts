@@ -1,14 +1,13 @@
-import {afterRender, Component, computed, inject, OnInit, signal} from '@angular/core';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { afterRender, Component, computed, inject, OnInit, signal, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {DeliveryService} from '../../service/delivery.service';
-import {DisplayedOrder} from '../../data/types';
-import {
-  MatDialog,
-} from '@angular/material/dialog';
-import {CreateTourComponent} from '../create-tour/create-tour.component';
+import { MatButtonModule } from '@angular/material/button';
+import { DeliveryService } from '../../service/delivery.service';
+import { DisplayedOrder } from '../../data/types';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateTourComponent } from '../create-tour/create-tour.component';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-view-order',
@@ -18,6 +17,7 @@ import {CreateTourComponent} from '../create-tour/create-tour.component';
     MatCheckboxModule,
     MatButtonModule,
     FormsModule,
+    MatPaginatorModule
   ],
   templateUrl: './view-order.component.html',
   styleUrls: ['./view-order.component.scss'],
@@ -27,17 +27,17 @@ export class ViewOrderComponent implements OnInit {
   private readonly _deliveryService = inject(DeliveryService);
   protected readonly dialog = inject(MatDialog);
 
-  protected displayedColumns: string[] = ['select', 'reference_commande', 'reference_client', 'adresse', 'ville','codePostal', 'date', "etat"];
+  protected displayedColumns: string[] = ['select', 'reference_commande', 'reference_client', 'adresse', 'ville', 'codePostal', 'date', "etat"];
 
   protected dataSource = signal<MatTableDataSource<DisplayedOrder>>(new MatTableDataSource<DisplayedOrder>());
-  // protected selectedDataSource = computed<DisplayedOrder[]>(
-  //     () => this.dataSource().data.filter(d => d.selected === true)
-  // )
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngOnInit(): void {
     this.getOrders().then(
       data => {
-        this.dataSource().data = [...data]
+        this.dataSource().data = [...data];
+        this.dataSource().paginator = this.paginator;
       }
     );
   }
@@ -48,12 +48,11 @@ export class ViewOrderComponent implements OnInit {
     return this._deliveryService.ordersDataToDisplay(undeliveredOrders, customers);
   }
 
-
   selectAllRows(event: any) {
     const checked = event.checked;
     this.dataSource().data = this.dataSource().data.map(
       row => ({ ...row, selected: checked })
-    )
+    );
     this.dataSource()._updateChangeSubscription();
   }
 
@@ -83,9 +82,6 @@ export class ViewOrderComponent implements OnInit {
       width: '1200px',
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-
-    });
+    dialogRef.afterClosed().subscribe(result => {});
   }
-
 }
