@@ -27,7 +27,7 @@ export class ViewOrderComponent implements OnInit {
   private readonly _deliveryService = inject(DeliveryService);
   protected readonly dialog = inject(MatDialog);
 
-  protected displayedColumns: string[] = ['select', 'reference_commande', 'reference_client', 'adresse', 'ville','codePostal', 'date'];
+  protected displayedColumns: string[] = ['select', 'reference_commande', 'reference_client', 'adresse', 'ville','codePostal', 'date', "etat"];
 
   protected dataSource = signal<MatTableDataSource<DisplayedOrder>>(new MatTableDataSource<DisplayedOrder>());
   // protected selectedDataSource = computed<DisplayedOrder[]>(
@@ -43,7 +43,7 @@ export class ViewOrderComponent implements OnInit {
   }
 
   private async getOrders() {
-    const undeliveredOrders = await this._deliveryService.getOpenedOrders();
+    const undeliveredOrders = await this._deliveryService.getUndeliveredOrders();
     const customers = await this._deliveryService.getCustomers();
     return this._deliveryService.ordersDataToDisplay(undeliveredOrders, customers);
   }

@@ -1,21 +1,14 @@
-import {Component, effect, inject, signal} from '@angular/core';
+import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {DeliveryService} from './service/delivery.service';
-import {OrderState} from './data/enums';
-import {DisplayedOrder} from './data/types';
-import { CreateTourComponent } from "./components/create-tour/create-tour.component";
 import { NavBarComponent } from "./components/nav-bar/nav-bar.component";
-import { ViewOrderComponent } from "./components/view-order/view-order.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    //RouterOutlet,
-    CreateTourComponent,
     NavBarComponent,
-    ViewOrderComponent
-],
+    RouterOutlet
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

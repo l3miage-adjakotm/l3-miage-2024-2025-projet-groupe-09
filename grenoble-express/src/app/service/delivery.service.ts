@@ -44,10 +44,10 @@ export class DeliveryService {
     );
   }
 
-  public async getOpenedOrders(): Promise<readonly Order[]> {
+  public async getUndeliveredOrders(): Promise<readonly Order[]> {
     const orders = await this.getOrders();
 
-    return Promise.resolve(orders.filter(order => order.etat === OrderState.ouverte));
+    return Promise.resolve(orders.filter(order => order.etat !== OrderState.livree && order.etat !== OrderState.notee));
   }
 
   public getDelivers(): Promise<readonly Employee[]> {
