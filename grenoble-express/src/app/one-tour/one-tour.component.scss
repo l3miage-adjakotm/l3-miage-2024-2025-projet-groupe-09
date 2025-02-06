@@ -1,0 +1,51 @@
+section {
+    display: table;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 140px;
+  }
+  
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    padding-right: 20px;
+    margin-top: 20px; 
+  }
+  
+  
+  button.mat-raised-button:hover {
+    background-color: #367dcd;
+    transform: scale(1.05);
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-right: 20px;
+  }
+  
+  
+  

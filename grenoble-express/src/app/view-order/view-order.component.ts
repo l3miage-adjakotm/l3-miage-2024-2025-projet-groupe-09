@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { MatCheckboxModule } from '@angular/material/checkbox'; // Assure-toi d'importer MatCheckboxModule aussi
-import { FormsModule } from '@angular/forms';  // Importer FormsModule pour ngModel
+import { MatCheckboxModule } from '@angular/material/checkbox'; 
+import { FormsModule } from '@angular/forms';
 
 interface Commande {
   reference_commande: string;
@@ -9,7 +9,7 @@ interface Commande {
   adresse: string;
   date: string;
   etat: string;
-  selected?: boolean;  // Propriété pour savoir si l'élément est sélectionné
+  selected?: boolean;  
 }
 
 const ELEMENT_DATA: Commande[] = [

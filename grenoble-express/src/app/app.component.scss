@@ -1,10 +1,24 @@
 .container {
     display: flex;
+    flex-direction: column;
+    width:80%;
+    height: 100vh; 
 }
-.container app-nav-bar {
+
+app-header {
+    width: 100%;
+    flex: 0 0 auto; 
+}
+
+.content {
+    display: flex;
+    flex: 1;
+}
+
+app-nav-bar {
     flex: 1; 
 }
 
-.container app-create-tour {
-    flex: 8;
+app-create-tour {
+    flex: 8; 
 }
