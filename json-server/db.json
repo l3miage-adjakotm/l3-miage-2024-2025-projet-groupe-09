@@ -4498,7 +4498,7 @@
     {
       "jdds": "jdd0",
       "reference": "c093",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "08/03/2024, 15:30",
       "note": null,
       "commentaire": null,
@@ -4696,7 +4696,7 @@
     {
       "jdds": "jdd0",
       "reference": "c108",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "13/03/2024, 16:00",
       "note": null,
       "commentaire": null,
@@ -9334,6 +9334,102 @@
           "emploi": "livreur",
           "entrepot": "Grenis",
           "id": "aaed"
+        }
+      ]
+    },
+    {
+      "id": "2e20",
+      "name": "Zone Meylan",
+      "orders": [
+        {
+          "reference": "c093",
+          "etat": "planifiee",
+          "date_de_creation": "08/03/2024, 15:30",
+          "selected": true,
+          "client": {
+            "email": "rdubois@gm.fr",
+            "prenom": "romain",
+            "nom": "DUBOIS",
+            "adresse": "10 Allee des Moscaries",
+            "code_postal": 38240,
+            "ville": "Meylan"
+          }
+        },
+        {
+          "reference": "c108",
+          "etat": "planifiee",
+          "date_de_creation": "13/03/2024, 16:00",
+          "selected": true,
+          "client": {
+            "email": "lmartin@or.fr",
+            "prenom": "léo",
+            "nom": "MARTIN",
+            "adresse": "Chemin de Charrière",
+            "code_postal": 38240,
+            "ville": "Meylan"
+          }
+        }
+      ],
+      "date": "14/02/2025",
+      "truck": {
+        "jdds": [
+          "jdd0",
+          "jdd1"
+        ],
+        "code": "cg456",
+        "immatriculation": "XY-456-ZT",
+        "latitude": null,
+        "longitude": null,
+        "kilometrage": 75023,
+        "entrepot": "Grenis",
+        "type": "Transporter",
+        "id": "da00"
+      },
+      "delivers": [
+        {
+          "jdds": [
+            "jdd0",
+            "jdd1"
+          ],
+          "trigramme": "SWL",
+          "prenom": "sophie",
+          "nom": "WHEEL",
+          "photo": "Selection_999(634).jpg",
+          "telephone": "0685698568",
+          "email": "swl@mobilis.fr",
+          "emploi": "livreur",
+          "entrepot": "Grenis",
+          "id": "2df3"
+        },
+        {
+          "jdds": [
+            "jdd0",
+            "jdd1"
+          ],
+          "trigramme": "CMJ",
+          "prenom": "citeb",
+          "nom": "MARUJ",
+          "photo": "Selection_999(632).jpg",
+          "telephone": "0657477854",
+          "email": "cmj@mobilis.fr",
+          "emploi": "livreur",
+          "entrepot": "Grenis",
+          "id": "9f25"
+        },
+        {
+          "jdds": [
+            "jdd0",
+            "jdd1"
+          ],
+          "trigramme": "MKR",
+          "prenom": "malik",
+          "nom": "KEPLER",
+          "photo": "Selection_999(630).jpg",
+          "telephone": "0685584112",
+          "email": "mkr@mobilis.fr",
+          "emploi": "livreur",
+          "entrepot": "Grenis",
+          "id": "55a5"
         }
       ]
     }
