@@ -29,10 +29,16 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "./node_modules/leaflet/dist/images",
+                "output": "assets/"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": []
           },
@@ -100,6 +106,6 @@
     }
   },
   "cli": {
-    "analytics": "45987705-839b-431d-8926-a5e25debf913"
+    "analytics": "f2c99732-f176-4fc6-9fa9-48adf7e216fa"
   }
 }

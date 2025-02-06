@@ -1,1 +1,10 @@
-<p>App</p>
+<app-map  [othermarkers]="othermarke()" [polylines]="_layer()" [markers]="marke()"></app-map>
+<p>Adresse : <input type="text" [(ngModel)]="adresse" (keydown)="trouveAdresses($event)"/></p>
+<button  (click)="bouttonClick()">calculer itinéraire</button>
+<div>
+  <p [textContent]="_t()"></p>
+
+  @for (i of _adresse();track i){
+  <li [textContent]="i"></li>
+  }
+</div>
