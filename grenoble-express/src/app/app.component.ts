@@ -9,6 +9,7 @@ import { ViewOrderComponent } from "./components/view-order/view-order.component
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     //RouterOutlet,
     CreateTourComponent,

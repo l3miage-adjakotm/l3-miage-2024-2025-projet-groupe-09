@@ -40,3 +40,34 @@ section {
   .table-container {
     width: 80%;
   }
+
+  //.custom-dialog {
+  //  .mat-mdc-dialog-container {
+  //    background-color: red;
+  //    border-radius: 10px;
+  //  }
+  //}
+
+  .open {
+    border: 1px #d4edda solid;
+    background-color: #d4edda;
+    padding: 4px;
+    border-radius: 50%;
+    color: #155724;
+  }
+
+  .planned {
+    border: 1px #cce5ff solid;
+    background-color: #cce5ff;
+    padding: 4px;
+    border-radius: 50%;
+    color: #004085;
+  }
+
+  .in_delivery {
+    border: 1px #fff3cd solid;
+    background-color: #fff3cd;
+    padding: 4px;
+    border-radius: 50%;
+    color: #856404;
+  }

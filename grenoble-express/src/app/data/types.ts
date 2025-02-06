@@ -25,7 +25,8 @@ export interface Product {
   option_montage: boolean,
   tdm_thérorique: string | null,
   stocks: readonly string[],
-  encombrement: string
+  encombrement: string,
+  id: string
 }
 
 export interface Stock {
@@ -33,7 +34,8 @@ export interface Stock {
   reference: string,
   entrepot: string,
   produit_en_stock: string,
-  quantite: number
+  quantite: number,
+  id: string
 }
 
 export interface Customer {
@@ -48,7 +50,8 @@ export interface Customer {
   latitude: number,
   longitude: number,
   commandes: string | null,
-  etat: "livré" | "livrable" | "inscrit"
+  etat: "livré" | "livrable" | "inscrit",
+  id: string
 }
 
 export interface Order {
@@ -59,7 +62,8 @@ export interface Order {
   note: number | null,
   commentaire: string | null,
   client: string,
-  lignes: readonly string[]
+  lignes: readonly string[],
+  id: string
 }
 
 export interface Lines {
@@ -68,7 +72,8 @@ export interface Lines {
   commande: string,
   produit: string,
   quantite: number,
-  option_montage: boolean
+  option_montage: boolean,
+  id: string
 }
 
 export interface Employee {
@@ -80,7 +85,8 @@ export interface Employee {
   telephone: string,
   email: string,
   emploi: string,
-  entrepot: string
+  entrepot: string,
+  id: string
 }
 
 export interface Truck {
@@ -91,7 +97,8 @@ export interface Truck {
   longitude: number | null,
   kilometrage: number,
   entrepot: string,
-  type: string
+  type: string,
+  id: string
 }
 
 export interface TruckType {
@@ -99,7 +106,8 @@ export interface TruckType {
   volume: number,
   prix_au_km: string,
   image: string,
-  camions: readonly string[]
+  camions: readonly string[],
+  id: string
 }
 
 export interface DisplayedOrder {
@@ -117,6 +125,32 @@ export interface DisplayedOrder {
   }
 }
 
+const clientSchema = zod.object({
+  email: zod.string(),
+  prenom: zod.string(),
+  nom: zod.string(),
+  adresse: zod.string(),
+  code_postal: zod.number(),
+  ville: zod.string(),
+  id: zod.string()
+});
+
+export const displayOrderSchema = zod.object({
+  reference: zod.string(),
+  etat: zod.nativeEnum(OrderState),
+  date_de_creation: zod.string(),
+  selected: zod.boolean().optional(),
+  client: clientSchema
+})
+
+export interface Tour {
+  name: string,
+  orders: readonly DisplayedOrder[],
+  date: string,
+  truck: Truck
+  delivers: readonly Employee[]
+}
+
 export const orderSchema = zod.object({
   jdds: zod.string(),
   reference: zod.string(),
@@ -125,7 +159,8 @@ export const orderSchema = zod.object({
   note: zod.number().nullable(),
   commentaire: zod.string().nullable(),
   client: zod.string(),
-  lignes: zod.array(zod.string()).readonly()
+  lignes: zod.array(zod.string()).readonly(),
+  id: zod.string()
 })
 
 export const ordersSchema = zod.array(orderSchema).readonly();
@@ -142,8 +177,47 @@ export const customerSchema = zod.object({
   latitude: zod.number(),
   longitude: zod.number(),
   commandes: zod.string().nullable(),
-  etat: zod.enum(["livré", "livrable", "inscrit"])
+  etat: zod.enum(["livré", "livrable", "inscrit"]),
+  id: zod.string()
 })
 
 export const customersSchema = zod.array(customerSchema).readonly();
 
+export const truckSchema = zod.object({
+  jdds: zod.array(zod.string()).readonly(),
+  code: zod.string(),
+  immatriculation: zod.string(),
+  latitude: zod.number().nullable(),
+  longitude: zod.number().nullable(),
+  kilometrage: zod.number(),
+  entrepot: zod.string(),
+  type: zod.string(),
+  id: zod.string()
+});
+
+export const trucksSchema = zod.array(truckSchema).readonly();
+
+export const employeeSchema = zod.object({
+  jdds: zod.array(zod.string()).readonly(),
+  trigramme: zod.string(),
+  prenom: zod.string(),
+  nom: zod.string(),
+  photo: zod.string(),
+  telephone: zod.string(),
+  email: zod.string(),
+  emploi: zod.string(),
+  entrepot: zod.string(),
+  id: zod.string()
+});
+
+export const employeesSchema = zod.array(employeeSchema).readonly();
+
+export const tourSchema = zod.object({
+  name: zod.string(),
+  orders: zod.array(displayOrderSchema),
+  date: zod.string(),
+  truck: truckSchema,
+  delivers: zod.array(employeeSchema).readonly()
+})
+
+export const toursSchema = zod.array(tourSchema).readonly();
