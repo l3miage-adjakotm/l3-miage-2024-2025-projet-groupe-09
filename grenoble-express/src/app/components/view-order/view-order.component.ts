@@ -88,4 +88,12 @@ export class ViewOrderComponent implements OnInit {
     });
   }
 
+
+searchText : string = '';
+
+
+applyFilter() {
+  this.dataSource().filter = this.searchText.trim().toLowerCase();
+}
+
 }

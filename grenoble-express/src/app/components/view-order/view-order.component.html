@@ -1,69 +1,78 @@
-<section>
 
-    <div class="view-order-header-container">
-      <button mat-flat-button class="custom-btn" (click)="openDialog()">
-        Créer une tournée
-      </button>
-    </div>
+<section>
+  <div class="view-order-header-container">
+    <button mat-flat-button class="custom-btn" (click)="openDialog()">
+      Créer une tournée
+    </button>
+  </div>
 </section>
+
+<!-- recherche  -->
+<label for="site-search"></label>
+<input type="search" id="site-search" [(ngModel)]="searchText" (keyup)="applyFilter()" placeholder="Rechercher..." />
 
 <table mat-table [dataSource]="dataSource()" class="mat-elevation-z8 table-container">
 
-    <ng-container matColumnDef="select">
-      <th mat-header-cell *matHeaderCellDef>
-        <mat-checkbox (change)="selectAllRows($event)" [checked]="isAllSelected()" [indeterminate]="isSomeSelected()">
-        </mat-checkbox>
-      </th>
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="selectAllRows($event)" [checked]="isAllSelected()" [indeterminate]="isSomeSelected()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-checkbox [checked]="element.selected" (change)="toggleRowSelection(element)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
 
-      <td mat-cell *matCellDef="let element">
-        <mat-checkbox [checked]="element.selected" (change)="toggleRowSelection(element)">
-        </mat-checkbox>
-      </td>
-    </ng-container>
+  <ng-container matColumnDef="reference_commande">
+    <th mat-header-cell *matHeaderCellDef> Réf. Commande </th>
+    <td mat-cell *matCellDef="let element"> {{element.reference}} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="reference_commande">
-      <th mat-header-cell *matHeaderCellDef> Réf. Commande </th>
-      <td mat-cell *matCellDef="let element"> {{element.reference}} </td>
-    </ng-container>
+  <ng-container matColumnDef="reference_client">
+    <th mat-header-cell *matHeaderCellDef> Email Client </th>
+    <td mat-cell *matCellDef="let element"> {{element.client.email}} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="reference_client">
-      <th mat-header-cell *matHeaderCellDef> Email Client </th>
-      <td mat-cell *matCellDef="let element"> {{element.client.email}} </td>
-    </ng-container>
+  <ng-container matColumnDef="adresse">
+    <th mat-header-cell *matHeaderCellDef> Adresse </th>
+    <td mat-cell *matCellDef="let element"> {{element.client.adresse}} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="adresse">
-      <th mat-header-cell *matHeaderCellDef> Adresse </th>
-      <td mat-cell *matCellDef="let element"> {{element.client.adresse}} </td>
-    </ng-container>
+  <ng-container matColumnDef="ville">
+    <th mat-header-cell *matHeaderCellDef> Ville </th>
+    <td mat-cell *matCellDef="let element"> {{element.client.ville}} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="ville">
-        <th mat-header-cell *matHeaderCellDef> Ville </th>
-        <td mat-cell *matCellDef="let element"> {{element.client.ville}} </td>
-      </ng-container>
+  <ng-container matColumnDef="codePostal">
+    <th mat-header-cell *matHeaderCellDef> Code Postal </th>
+    <td mat-cell *matCellDef="let element"> {{element.client.code_postal}} </td>
+  </ng-container>
 
-      <ng-container matColumnDef="codePostal">
-        <th mat-header-cell *matHeaderCellDef> Code Postal </th>
-        <td mat-cell *matCellDef="let element"> {{element.client.code_postal}} </td>
-      </ng-container>
+  <ng-container matColumnDef="date">
+    <th mat-header-cell *matHeaderCellDef> Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.date_de_creation}} </td>
+  </ng-container>
 
-    <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.date_de_creation}} </td>
-    </ng-container>
+  <ng-container matColumnDef="etat">
+    <th mat-header-cell *matHeaderCellDef> État </th>
+    <td mat-cell *matCellDef="let element">
+      <span [class]="{open: element.etat === 'ouverte', planned: element.etat === 'planifiee', in_delivery: element.etat === 'en_livraison'}">
+        {{element.etat}}
+      </span>
+    </td>
+  </ng-container>
 
-    <ng-container matColumnDef="etat">
-      <th mat-header-cell *matHeaderCellDef> État </th>
-      <td mat-cell
-          *matCellDef="let element"
-      >
-          <span [class]="{open: element.etat === 'ouverte', planned: element.etat === 'planifiee',
-                        in_delivery: element.etat === 'en_livraison'}">
-                 {{element.etat}}
-          </span>
-       </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
+<!-- select -->
+<!-- <mat-form-field>
+  <mat-label>Toppings</mat-label>
+  <mat-select [formControl]="toppings" multiple>
+    @for (topping of toppingList; track topping) {
+      <mat-option [value]="topping">{{topping}}</mat-option>
+    }
+  </mat-select>
+</mat-form-field> -->

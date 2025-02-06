@@ -18,7 +18,7 @@ export class HeaderComponent {
   Planners: Planner[] = [
     {
       name: 'Anne-Marie Dupont',
-      photo: 'https://i.pinimg.com/originals/be/b6/63/beb663f8fe4fa66d74dd2de9975b073f.jpg',
+      photo: 'https://media.licdn.com/dms/image/D4E03AQED8wzIelU5FA/profile-displayphoto-shrink_800_800/0/1689882637314?e=2147483647&v=beta&t=kiqpYV5LWdCOnY3fV1LPwDLsnihGrcx7i-a7NIshiO8',
       role: 'Planificatrice'
     },
     {

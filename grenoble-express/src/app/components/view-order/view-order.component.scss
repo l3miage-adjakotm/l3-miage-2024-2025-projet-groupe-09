@@ -29,12 +29,13 @@ section {
     justify-content: center;
     width: 100%;
     margin: 50px 0;
+    margin-left: 400%;
+
   }
 
   .custom-btn {
     width: 200px;
     height: 50px;
-
   }
 
   .table-container {
@@ -71,3 +72,29 @@ section {
     border-radius: 50%;
     color: #856404;
   }
+
+
+/* Style du champ de recherche */
+#site-search {
+  width: 250px;
+  padding: 10px;
+  border: 2px solid #007BFF;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  margin-top: -80%;
+}
+
+/* Style de la liste */
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+}
