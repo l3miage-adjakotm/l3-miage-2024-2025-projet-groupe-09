@@ -18,22 +18,34 @@ en back-end avec JAVA / Sprint Boot.
 
 1. Joran MONNERON
 2. Marius ADJAKOTAN
-3. RASOLONJATOVO Tianasoa
-4. NADJIDATIE Houssouny Abdallah
-5. RAKOTOMALALA Jonathan
-6. LE Duc Minh Trung
+3. Tianasoa RASOLONJATOVO 
+4. Houssouny Abdallah NADJIDATIE
+5. Jonathan RAKOTOMALALA
+6. Duc Minh Trung LE
 
 ## SEMAINE 01 
 
 1. Réalisation d'un document décrivant des
-users stories et des scénarios du point
-de vue du Livreur et du Planificateur (document PDF ajouté au dépôt)
+  users stories et des scénarios du point
+  de vue du Livreur et du Planificateur (document PDF ajouté au dépôt)
 2. Réalisation des designs low-fidelity
-en papier et stylo
+   en papier et stylo
 3. Réalisation d'un moodboard
 4. Réalisation d'une première version de
-marquette pour illustrer les différents
-scénarios
+   maquettes pour illustrer les différents scénarios
 
 Lien vers le Design File sur Figma : https://www.figma.com/design/pxwUP3IX0jF2ano2Dm8vWX/Projet-Int%C3%A9grateur-L3-MIAGE-2025?t=zJckbbfWFnM8yUu3-0
+
+## SEMAINE 02
+
+1. Modification de quelques interfaces sur figma afin d'être
+   en adéquation avec les retours des professeurs
+2. Réalisation des deux diagrammes de séquence
+   (mis à disposition sur le coda et le git) pour
+   créer et visualiser une tournée.
+3. Création du projet angular et toutes ses dépendances
+4. Développement de tous les composants nécessaire afin
+   d'implémenter les différentes interfaces du planificateur
+5. Mise en place du système de route afin de relier tout
+   nos composants entre eux
 
