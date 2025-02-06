@@ -10,8 +10,9 @@ import {RouterLink} from '@angular/router';
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
-  standalone: true,
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, MatMenuModule, RouterLink],})
-export class NavBarComponent {
+
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule,MatMenuModule],})
+export class NavBarComponent {
+
 
 }
