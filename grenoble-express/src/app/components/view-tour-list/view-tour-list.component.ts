@@ -1,8 +1,11 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit, signal} from '@angular/core';
 import {Router} from '@angular/router';
 import {MatTableModule} from '@angular/material/table';
 import {FormsModule} from '@angular/forms';
 import {MatButton} from '@angular/material/button';
+import {DeliveryService} from '../../service/delivery.service';
+import {Tour} from '../../data/types';
+import {TitleCasePipe} from '@angular/common';
 
 interface Commande {
   nom_tournee: string;
@@ -36,18 +39,33 @@ const ELEMENT_DATA: Commande[] = [
     MatTableModule,
     FormsModule,
     MatButton,
+    TitleCasePipe,
   ],
   standalone: true,
   templateUrl: './view-tour-list.component.html',
   styleUrl: './view-tour-list.component.scss'
 })
-export class ViewTourListComponent {
+export class ViewTourListComponent implements OnInit {
   displayedColumns: string[] = ['nom_tournee', 'livreurs', 'camion', 'date', 'action'];
   dataSource = ELEMENT_DATA;
 
   private _router = inject(Router);
+  private _deliveryService = inject(DeliveryService);
+  protected tours = signal<readonly Tour[]>([]);
 
-  onClickTour(id: string, event: MouseEvent) {
+  ngOnInit(): void {
+    this.getTours();
+    console.log(this.tours());
+  }
+
+  private getTours() {
+    this._deliveryService.getTours().then(
+      tours => this.tours.set(tours)
+    )
+  }
+
+
+  onClickTour(id: string) {
     this._router.navigate(["/liste-tournees", id]);
   }
 }

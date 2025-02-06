@@ -5,7 +5,7 @@ import {readCustomers} from '../API/custormer';
 import {OrderState} from '../data/enums';
 import {readEmployes} from '../API/employee';
 import {readTrucks} from '../API/truck';
-import {createTour} from '../API/tour';
+import {createTour, readTours} from '../API/tour';
 
 @Injectable({
   providedIn: 'root'
@@ -68,5 +68,13 @@ export class DeliveryService {
 
   public changeOrderState(changedOrder: Order) {
     return changeOrderState(changedOrder.id, { etat: changedOrder.etat });
+  }
+
+  public getTours(): Promise<readonly Tour[]> {
+    return readTours();
+  }
+
+  public getTourById() {
+
   }
 }

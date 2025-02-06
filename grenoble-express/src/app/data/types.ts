@@ -116,6 +116,7 @@ export interface DisplayedOrder {
   date_de_creation: string,
   selected?: boolean,
   client: {
+    id?: string,
     email: string,
     prenom: string,
     nom: string,
@@ -132,7 +133,7 @@ const clientSchema = zod.object({
   adresse: zod.string(),
   code_postal: zod.number(),
   ville: zod.string(),
-  id: zod.string()
+  id: zod.string().optional()
 });
 
 export const displayOrderSchema = zod.object({
@@ -144,6 +145,7 @@ export const displayOrderSchema = zod.object({
 })
 
 export interface Tour {
+  id?: string,
   name: string,
   orders: readonly DisplayedOrder[],
   date: string,
@@ -213,6 +215,7 @@ export const employeeSchema = zod.object({
 export const employeesSchema = zod.array(employeeSchema).readonly();
 
 export const tourSchema = zod.object({
+  id: zod.string().optional(),
   name: zod.string(),
   orders: zod.array(displayOrderSchema),
   date: zod.string(),
