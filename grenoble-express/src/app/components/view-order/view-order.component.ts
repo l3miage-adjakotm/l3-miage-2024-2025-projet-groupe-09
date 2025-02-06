@@ -29,7 +29,7 @@ export class ViewOrderComponent {
 
   private readonly _deliveryService = inject(DeliveryService);
 
-  protected displayedColumns: string[] = ['select', 'reference_commande', 'reference_client', 'adresse', 'ville','codePostal', 'date', 'etat'];
+  protected displayedColumns: string[] = ['select', 'reference_commande', 'reference_client', 'adresse', 'ville', 'codePostal', 'date', 'etat'];
   protected readonly ordersToDisplay = signal<readonly DisplayedOrder[]>([]);
 
   private async getOrdersDataToDisplay() {
