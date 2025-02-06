@@ -15,6 +15,7 @@ import * as _moment from 'moment';
 import {default as _rollupMoment, Moment} from 'moment';
 import {provideMomentDateAdapter} from "@angular/material-moment-adapter";
 import {OrderState} from "../../data/enums";
+import {Router} from '@angular/router';
 
 const moment = _rollupMoment || _moment;
 
@@ -45,6 +46,7 @@ export class CreateTourComponent implements OnInit {
   private readonly dialogRef = inject(MatDialogRef<CreateTourComponent>);
   protected readonly data = inject<readonly DisplayedOrder[]>(MAT_DIALOG_DATA);
   private _deliveryService = inject(DeliveryService);
+  private _router = inject(Router);
 
   protected nameTour = signal<string>("");
 
@@ -120,5 +122,6 @@ export class CreateTourComponent implements OnInit {
   protected createTourDay() {
     this.addTour();
     this.onNoClick();
+    this._router.navigateByUrl("liste-tournees");
   }
 }

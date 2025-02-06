@@ -5,11 +5,13 @@
     padding: 10px 10px;
     background-color: #f4f4f4;
     width: 100vw;
-    height:50px
+    height:80px
 }
+
 .logo img {
     height: 50px;
 }
+
 .profile-card {
     display: flex;
     align-items: center;
@@ -19,8 +21,8 @@
     width: 50px;
     height: 50px;
     border-radius: 60%;
-    object-fit: cover;  
-    display: block; 
+    object-fit: cover;
+    display: block;
     margin-right: 10px;
 }
 .info h2 {
@@ -34,14 +36,14 @@
 }
 
 .logo {
-    display: flex;                
-    align-items: center;         
-    margin-left: 25px;           
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
 }
 
 .logo img {
-    width: 80px;                 
+    width: 80px;
     height: 50px;
-    object-fit: cover;            
-    border-radius: 20%;           
+    object-fit: cover;
+    border-radius: 20%;
 }

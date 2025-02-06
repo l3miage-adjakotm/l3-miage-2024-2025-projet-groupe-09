@@ -9,16 +9,17 @@ interface Planner {
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'] // 
+  styleUrl: './header.component.scss',
+  standalone: true
 })
 export class HeaderComponent {
-  planner: Planner; // 
+  planner: Planner; //
 
   Planners: Planner[] = [
     {
       name: 'Anne-Marie Dupont',
       photo: 'https://i.pinimg.com/originals/be/b6/63/beb663f8fe4fa66d74dd2de9975b073f.jpg',
-      role: 'Planner'
+      role: 'Planificatrice'
     },
     {
       name: 'nadji',
@@ -28,6 +29,6 @@ export class HeaderComponent {
   ];
 
   constructor() {
-    this.planner = this.Planners[0]; 
+    this.planner = this.Planners[0];
   }
 }
