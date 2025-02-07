@@ -29,13 +29,12 @@ section {
   justify-content: center;
   width: 100%;
   margin: 50px 0;
-  margin-top: 20%;
 }
 
 .custom-btn {
   width: 200px;
   height: 50px;
-
+  margin-left: 1000px;
 }
 
 .table-container {
@@ -74,5 +73,5 @@ section {
 }
 
 mat-paginator{
-  margin-bottom: 150px;
+  margin: 50px 0 200px 0;
 }
