@@ -1,15 +1,12 @@
-import {Component, computed, inject, input, model, OnInit, output, signal} from '@angular/core';
+import {Component, computed, inject, model, OnInit, signal} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import { Icon, icon, LatLng, latLng, Layer, MapOptions, marker, Marker, polyline, Polyline, tileLayer } from 'leaflet';
 import {ActivatedRoute} from '@angular/router';
-import {undefined, z} from 'zod';
-import {DisplayedOrder, Tour} from '../../data/types';
+import {Tour} from '../../data/types';
 import {DeliveryService} from '../../service/delivery.service';
 import {GeoServiceService} from '../../service/geo-service.service';
-import {GeoJSON2DMultiLineString} from 'zod-geojson';
 import {MultiLineString} from 'geojson';
-import {JsonPipe} from '@angular/common';
 
 type AddressForResearch = {
   address: string,
@@ -21,7 +18,6 @@ type AddressForResearch = {
   imports: [
     LeafletModule,
     FormsModule,
-    JsonPipe
   ],
   standalone: true,
   templateUrl: './map.component.html',

@@ -17,8 +17,8 @@ export class HeaderComponent {
 
   Planners: Planner[] = [
     {
-      name: 'Anne-Marie Dupont',
-      photo: 'https://i.pinimg.com/originals/be/b6/63/beb663f8fe4fa66d74dd2de9975b073f.jpg',
+      name: 'Claudia TESSIER',
+      photo: 'https://i.postimg.cc/nVDg47VX/planificatrice.jpg',
       role: 'Planificatrice'
     },
     {
