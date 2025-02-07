@@ -57,9 +57,21 @@ export class MapComponent implements OnInit {
   public zoom = model<number>(12);
   public center = computed<LatLng>(() => latLng(this.latitude(), this.longitude()));
 
-  private readonly layer = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' });
+  private readonly coordinatesCustomerLayers = signal<LatLng[]>([]);
+  private readonly coordinatesCustomerLayersMakers = computed(() => this.coordinatesCustomerLayers().map(this.latLngToMarkerForClientAddress));
+
+  private readonly coordinatesStoreLayers = signal<LatLng[]>([]);
+  private readonly coordinatesStoreLayersMakers = computed(() => this.coordinatesStoreLayers().map(this.latLngToMarkerForStore));
+
+  private readonly layer = signal<MultiLineString>({coordinates: [], type: 'MultiLineString'});
+  private readonly layerCoordinates = computed<LatLng[][]>(()=>this.layer().coordinates.map(line => line.map(coord => latLng(coord[1], coord[0]))));
+  private readonly polylines = computed<Polyline[]>(() =>this.layerCoordinates().map(line => polyline(line,{color :'blue'})));
+  private readonly baseLayer = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' });
   public layers = computed<Layer[]>(() => [
-    this.layer
+    this.baseLayer,
+    ...this.polylines(),
+    ...this.coordinatesStoreLayersMakers(),
+    ...this.coordinatesCustomerLayersMakers()
   ]);
 
   public options = computed<MapOptions>(() => ({ layers: this.layers(), zoom: this.zoom(), center: this.center()}));
@@ -73,6 +85,30 @@ export class MapComponent implements OnInit {
     await this.getStore();
     this.setCustomersAddresses();
     await this.getListCoordinates();
+  }
+
+  latLngToMarkerForClientAddress(latLng: LatLng): Marker {
+    return marker(
+      [latLng.lat, latLng.lng], {
+        icon: icon({
+          ...Icon.Default.prototype.options,
+          iconUrl: 'assets/marker-icon.png',
+          iconRetinaUrl: 'assets/marker-icon-2x.png',
+          shadowUrl: 'assets/marker-shadow.png'
+        })
+      });
+  }
+
+  latLngToMarkerForStore(latLng: LatLng): Marker {
+    return marker(
+      [latLng.lat, latLng.lng], {
+        icon: icon({
+          ...Icon.Default.prototype.options,
+          iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Redcolor.png/640px-Redcolor.png',
+          iconRetinaUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Redcolor.png/640px-Redcolor.png',
+          shadowUrl: 'assets/marker-shadow.png'
+        })
+      });
   }
 
   private async getTour() {
@@ -107,11 +143,18 @@ export class MapComponent implements OnInit {
     );
 
     const coordinates = await Promise.all(addresses.map(this._geoService.geocode));
+    const customersCoordinates = coordinates.slice(1);
+
+    this.coordinatesStoreLayers.set([coordinates[0]]);
+    this.coordinatesCustomerLayers.set(customersCoordinates);
+
+    await this.getCoordinatesFromORS(coordinates);
   }
 
   private async getCoordinatesFromORS(coordinates: LatLng[]) {
     const list: [number, number][] = coordinates.map(({ lat, lng }) => [lng, lat]);
 
     const opsCoordinates = await this._geoService.getItinerary(list);
+    this.layer.set(opsCoordinates);
   }
 }

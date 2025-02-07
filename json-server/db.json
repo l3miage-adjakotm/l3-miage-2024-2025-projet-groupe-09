@@ -4333,7 +4333,7 @@
     {
       "jdds": "jdd0",
       "reference": "c081",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "04/03/2024, 13:00",
       "note": null,
       "commentaire": null,
@@ -4722,7 +4722,7 @@
     {
       "jdds": "jdd0",
       "reference": "c110",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "14/03/2024, 08:00",
       "note": null,
       "commentaire": null,
@@ -5442,7 +5442,7 @@
     {
       "jdds": "jdd0",
       "reference": "c164",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "29/03/2024, 08:30",
       "note": null,
       "commentaire": null,
@@ -5845,7 +5845,7 @@
     {
       "jdds": "jdd0",
       "reference": "c194",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 18:30",
       "note": null,
       "commentaire": null,
@@ -8438,7 +8438,7 @@
     {
       "jdds": "jdd0",
       "reference": "c387",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "08/04/2024, 12:00",
       "note": null,
       "commentaire": null,
@@ -9430,6 +9430,129 @@
           "emploi": "livreur",
           "entrepot": "Grenis",
           "id": "55a5"
+        }
+      ]
+    },
+    {
+      "id": "4c9e",
+      "name": "Zone de Seyssins",
+      "orders": [
+        {
+          "reference": "c081",
+          "etat": "planifiee",
+          "date_de_creation": "04/03/2024, 13:00",
+          "selected": true,
+          "client": {
+            "email": "mbonnet@or.fr",
+            "prenom": "marie",
+            "nom": "BONNETO",
+            "adresse": "3 Chemin du Fangeat",
+            "code_postal": 38180,
+            "ville": "Seyssins"
+          }
+        },
+        {
+          "reference": "c110",
+          "etat": "planifiee",
+          "date_de_creation": "14/03/2024, 08:00",
+          "selected": true,
+          "client": {
+            "email": "lguyot@lp.net",
+            "prenom": "louna",
+            "nom": "GUYOT",
+            "adresse": "17 Avenue du Vercors",
+            "code_postal": 38170,
+            "ville": "Seyssinet-Pariset"
+          }
+        },
+        {
+          "reference": "c164",
+          "etat": "planifiee",
+          "date_de_creation": "29/03/2024, 08:30",
+          "selected": true,
+          "client": {
+            "email": "aguyot@hot.fr",
+            "prenom": "alicia",
+            "nom": "GUYOT",
+            "adresse": "3 Rue Laurent Darve",
+            "code_postal": 38170,
+            "ville": "Seyssinet-Pariset"
+          }
+        },
+        {
+          "reference": "c194",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 18:30",
+          "selected": true,
+          "client": {
+            "email": "mbonnet@or.fr",
+            "prenom": "marie",
+            "nom": "BONNETO",
+            "adresse": "3 Chemin du Fangeat",
+            "code_postal": 38180,
+            "ville": "Seyssins"
+          }
+        },
+        {
+          "reference": "c387",
+          "etat": "planifiee",
+          "date_de_creation": "08/04/2024, 12:00",
+          "selected": true,
+          "client": {
+            "email": "lguyot@lp.net",
+            "prenom": "louna",
+            "nom": "GUYOT",
+            "adresse": "17 Avenue du Vercors",
+            "code_postal": 38170,
+            "ville": "Seyssinet-Pariset"
+          }
+        }
+      ],
+      "date": "14/02/2025",
+      "truck": {
+        "jdds": [
+          "jdd0",
+          "jdd1"
+        ],
+        "code": "cg987",
+        "immatriculation": "BC-987-PQ",
+        "latitude": null,
+        "longitude": null,
+        "kilometrage": 6621,
+        "entrepot": "Grenis",
+        "type": "Prueba Scania 280",
+        "id": "7d51"
+      },
+      "delivers": [
+        {
+          "jdds": [
+            "jdd0",
+            "jdd1"
+          ],
+          "trigramme": "SWL",
+          "prenom": "sophie",
+          "nom": "WHEEL",
+          "photo": "Selection_999(634).jpg",
+          "telephone": "0685698568",
+          "email": "swl@mobilis.fr",
+          "emploi": "livreur",
+          "entrepot": "Grenis",
+          "id": "2df3"
+        },
+        {
+          "jdds": [
+            "jdd0",
+            "jdd1"
+          ],
+          "trigramme": "CMJ",
+          "prenom": "citeb",
+          "nom": "MARUJ",
+          "photo": "Selection_999(632).jpg",
+          "telephone": "0657477854",
+          "email": "cmj@mobilis.fr",
+          "emploi": "livreur",
+          "entrepot": "Grenis",
+          "id": "9f25"
         }
       ]
     }
