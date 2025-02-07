@@ -1,4 +1,4 @@
-import {afterRender, Component, computed, inject, OnInit, signal} from '@angular/core';
+import {afterRender, Component, computed, inject, OnInit, signal, ViewChild} from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
@@ -9,16 +9,18 @@ import {
   MatDialog,
 } from '@angular/material/dialog';
 import {CreateTourComponent} from '../create-tour/create-tour.component';
+import {MatPaginator} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-view-order-list',
   standalone: true,
-  imports: [
-    MatTableModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    FormsModule,
-  ],
+    imports: [
+        MatTableModule,
+        MatCheckboxModule,
+        MatButtonModule,
+        FormsModule,
+        MatPaginator,
+    ],
   templateUrl: './view-order-list.component.html',
   styleUrls: ['./view-order-list.component.scss'],
 })
@@ -34,10 +36,13 @@ export class ViewOrderListComponent implements OnInit {
   //     () => this.dataSource().data.filter(d => d.selected === true)
   // )
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
   ngOnInit(): void {
     this.getOrders().then(
       data => {
-        this.dataSource().data = [...data]
+        this.dataSource().data = [...data];
+        this.dataSource().paginator = this.paginator;
       }
     );
   }
