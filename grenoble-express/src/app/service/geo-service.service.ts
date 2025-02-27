@@ -92,7 +92,7 @@ export class GeoServiceService {
     return Promise.resolve(donn);
   }
 
-  async getItineraryTourOptimized(body:OptimizationBodyRequest):  Promise<[number,number][]> {
+  async getItineraryTourOptimized(body:OptimizationBodyRequest):  Promise<[number,number][][]> {
     var donn;
     var fetr = await fetch("https://api.openrouteservice.org/optimization", {
       method: 'POST',
@@ -110,10 +110,10 @@ export class GeoServiceService {
       throw new Error("Erreur");
     }
     if (donn.code == 0) {
-      donn = donn.routes[0].steps;
-      donn = donn.map((s: { location: number[] }) => s.location);
+      const liststeps:[number,number][][] = (donn.routes.map((r:any)=>r.steps)).map((s:any)=> s.map((t:any)=>t.location));
       console.log(donn);
-      return donn;
+      console.log(liststeps);
+      return liststeps;
     }
     return Promise.resolve(donn);
   }

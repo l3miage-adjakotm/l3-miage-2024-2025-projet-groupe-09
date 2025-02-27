@@ -169,7 +169,7 @@ export interface Vehicle {
   end:[number,number];
   capacity:[number];
   skills: number[];
-  time_windows?: [number, number][];
+  time_window?: [number, number];
 }
 
 export interface OptimizationBodyRequest{

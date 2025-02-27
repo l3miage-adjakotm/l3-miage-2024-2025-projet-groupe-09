@@ -7,6 +7,7 @@ import {Tour, Job, Vehicle, OptimizationBodyRequest} from '../../data/types';
 import {DeliveryService} from '../../service/delivery.service';
 import {GeoServiceService} from '../../service/geo-service.service';
 import {MultiLineString} from 'geojson';
+import {GeoJSON2DMultiLineString} from 'zod-geojson';
 
 type AddressForResearch = {
   address: string,
@@ -30,7 +31,7 @@ export class MapComponent implements OnInit {
   private _geoService = inject(GeoServiceService);
 
   private _id = signal<string>("");
-  protected tour = signal<Tour>({
+  protected tour = signal<Tour[]>([{
     name: "",
     orders: [],
     date: "",
@@ -45,7 +46,7 @@ export class MapComponent implements OnInit {
       entrepot: ""
     },
     delivers: []
-  });
+  }]);
   protected addressesForResearch = signal<readonly AddressForResearch[]>([]);
 
   public latitude = model<number>(45.166672);
@@ -65,10 +66,12 @@ export class MapComponent implements OnInit {
   private readonly baseLayer = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' });
   public layers = computed<Layer[]>(() => [
     this.baseLayer,
-    ...this.polylines(),
+    ...this._polylines().flat(),
     ...this.coordinatesStoreLayersMakers(),
     ...this.coordinatesCustomerLayersMakers()
   ]);
+
+  public _polylines = signal<Polyline[][]>([]);
 
   public options = computed<MapOptions>(() => ({ layers: this.layers(), zoom: this.zoom(), center: this.center()}));
 
@@ -108,8 +111,8 @@ export class MapComponent implements OnInit {
   }
 
   private async getTour() {
-    const tour = await this._deliveryService.getTourById(this._id());
-    this.tour.set(tour);
+    const tour = await this._deliveryService.getTours();
+    this.tour.set(tour.map((x)=>x));
   }
 
 
@@ -123,9 +126,9 @@ export class MapComponent implements OnInit {
   }
 
   private parseCustomersAddress(): readonly AddressForResearch[] {
-    return this.tour().orders.map(
+    return this.tour().map((x)=> x.orders.map(
       order => ({address: order.client.adresse, codePostal: order.client.code_postal})
-    )
+    )).flat(1);
   }
 
   private setCustomersAddresses() {
@@ -151,8 +154,10 @@ export class MapComponent implements OnInit {
     const list: [number, number][] = coordinates.map(({ lat, lng }) => [lng, lat]);
 
     const bodyForOpt = this.getBodyForOptimization(list);
-    const opsCoordinates = await  this._geoService.getItinerary(await this._geoService.getItineraryTourOptimized(bodyForOpt));
-    this.layer.set(opsCoordinates);
+    const opsCoordinates = await this._geoService.getItineraryTourOptimized(bodyForOpt);
+    const resultCoordinates :GeoJSON2DMultiLineString[] =await Promise.all(opsCoordinates.map(async (x) => {return await this._geoService.getItinerary(x);}));
+    const couleurs = ['blue','red','purple'];
+    resultCoordinates.map((x,i)=>{this.layer.set(x);const p = this.layerCoordinates().map(((line => polyline(line,{color :couleurs[i]}))));this._polylines.update((layers) => [...layers,p]);});
   }
 
 
@@ -161,7 +166,7 @@ export class MapComponent implements OnInit {
   }
 
   private getVehicles():Vehicle[] {
-    return [{id:1,profile:"driving-car",start:[5.7369725,45.14852],end:[5.7369725,45.14852],capacity:[4],skills:[1,14]}];
+    return [{id:1,profile:"driving-car",start:[5.7369725,45.14852],end:[5.7369725,45.14852],capacity:[5],skills:[1,14],time_window:[28800,43200]},{id:2,profile:"driving-car",start:[5.7369725,45.14852],end:[5.7369725,45.14852],capacity:[4],skills:[1,14]},{id:3,profile:"driving-car",start:[5.7369725,45.14852],end:[5.7369725,45.14852],capacity:[4],skills:[1,14]}];
   }
 
   private getBodyForOptimization(list:[number,number][]):OptimizationBodyRequest{
