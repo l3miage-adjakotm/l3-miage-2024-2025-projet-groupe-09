@@ -1,0 +1,62 @@
+<div class="container small-container">
+  <form class="example-form form-background small-form">
+    <h4>Nom de la tournée</h4>
+    <mat-form-field class="example-full-width small-field">
+      <input matInput placeholder="Entrez un nom"
+             [ngModel]="nameTour()"
+             (ngModelChange)="nameTour.set($event)"
+             [ngModelOptions]="{standalone: true}"
+      />
+    </mat-form-field>
+
+    <h4>Livreurs</h4>
+    <mat-form-field class="small-field">
+      <mat-label>Livreurs</mat-label>
+      <mat-select
+        [ngModel]="selectedDelivers()"
+        (ngModelChange)="selectedDelivers.set($event)"
+        [ngModelOptions]="{standalone: true}"
+        multiple
+      >
+        @for (deliver of delivers(); track deliver.email) {
+          <mat-option [value]="deliver">
+            {{deliver.prenom | titlecase }} {{deliver.nom | titlecase }}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <h4>Camion</h4>
+    <mat-form-field class="small-field">
+      <mat-label>Camion</mat-label>
+      <mat-select
+        [ngModel]="selectedTruck()"
+        (ngModelChange)="selectedTruck.set($event)"
+        [ngModelOptions]="{standalone: true}"
+      >
+        @for (truck of trucks(); track truck.code) {
+          <mat-option [value]="truck">
+            {{truck.type}}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <h4>Date de la tournée</h4>
+    <mat-form-field class="example-form-field">
+      <mat-label>MM/DD/YYYY</mat-label>
+      <input matInput
+             [matDatepicker]="datepicker"
+             [ngModel]="dateOfTour()"
+             (ngModelChange)="dateOfTour.set($event)"
+             [ngModelOptions]="{standalone: true}"
+      />
+      <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+      <mat-datepicker #datepicker></mat-datepicker>
+    </mat-form-field>
+
+    <section class="button-container small-button">
+      <button mat-flat-button class="add-tour-btn" (click)="createTourDay()">Ajouter</button>
+    </section>
+  </form>
+</div>

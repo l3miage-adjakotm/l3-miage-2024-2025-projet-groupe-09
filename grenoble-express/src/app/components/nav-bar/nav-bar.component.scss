@@ -1,0 +1,53 @@
+.page-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #F4F4F4;
+}
+
+.menu-container {
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.example-button-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-title {
+    margin: 0;
+    font-size: 24px;
+}
+
+.button-section {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.view-order-header-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+
+.custom-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.button-icon {
+    font-size: 20px;
+    margin-left: 0;
+}

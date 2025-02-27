@@ -1,0 +1,77 @@
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.view-order-header-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 50px 0;
+}
+
+.custom-btn {
+  width: 200px;
+  height: 50px;
+  margin-left: 1000px;
+}
+
+.table-container {
+  width: 80%;
+}
+
+//.custom-dialog {
+//  .mat-mdc-dialog-container {
+//    background-color: red;
+//    border-radius: 10px;
+//  }
+//}
+
+.open {
+  border: 1px #d4edda solid;
+  background-color: #d4edda;
+  padding: 4px;
+  border-radius: 50%;
+  color: #155724;
+}
+
+.planned {
+  border: 1px #cce5ff solid;
+  background-color: #cce5ff;
+  padding: 4px;
+  border-radius: 50%;
+  color: #004085;
+}
+
+.in_delivery {
+  border: 1px #fff3cd solid;
+  background-color: #fff3cd;
+  padding: 4px;
+  border-radius: 50%;
+  color: #856404;
+}
+
+mat-paginator{
+  margin: 50px 0 200px 0;
+}
