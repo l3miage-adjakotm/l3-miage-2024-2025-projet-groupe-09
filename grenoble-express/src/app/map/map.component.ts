@@ -22,6 +22,14 @@ export class MapComponent {
   public readonly polylines = input<LatLng[][]>([[]]);
   public readonly othermarkers = input<Marker[]>([]);//marker de debut et fin de tournees
 
+  public readonly _polylines = computed<Polyline[]>(() =>this.polylines().map(line => polyline(line,{color :'blue'})));
+  public readonly _markers = computed<Marker[]>(() => this.markers()?.map(m => this.latLngToMarker(m)));
+
+  private readonly layer = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' });
+  public layers = computed<Layer[]>(() => [this.layer,this.othermarkers(),this._markers(),...this._polylines()].flat().filter(l => l !== undefined) as Layer[]);
+
+  public options = computed<MapOptions>(() => ({ layers: this.layers(), zoom: this.zoom(), center: this.center()}));
+
 
   latLngToMarker(latLng: LatLng): Marker {
       return marker(
@@ -34,21 +42,6 @@ export class MapComponent {
           })
       });
   }
-
-  public readonly _polylines = computed<Polyline[]>(() =>this.polylines().map(line => polyline(line,{color :'blue'})));
-   public readonly _markers = computed<Marker[]>(() => this.markers()?.map(m => this.latLngToMarker(m)));
-
-  private readonly layer = tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '...' });
-  public layers = computed<Layer[]>(() => [this.layer,this.othermarkers(),this._markers(),...this._polylines()].flat().filter(l => l !== undefined) as Layer[]);
-
-  public options = computed<MapOptions>(() => ({ layers: this.layers(), zoom: this.zoom(), center: this.center()}));
-
-  // public clickOnMap = output<LatLng>();
-
-  // mapClique(e: LatLng) {
-  //   this.clickOnMap.emit(e);
-  //   console.log('Map clicked at:', e, this.markers());
-  // }
 
   public leafletCenterChange = output<LatLng>();
   public leafletZoomChange = output<number>();
