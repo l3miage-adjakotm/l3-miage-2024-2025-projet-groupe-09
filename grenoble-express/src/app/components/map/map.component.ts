@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import { Icon, icon, LatLng, latLng, Layer, MapOptions, marker, Marker, polyline, Polyline, tileLayer } from 'leaflet';
 import {ActivatedRoute} from '@angular/router';
-import {Tour} from '../../data/types';
+import {Tour, Job, Vehicle, OptimizationBodyRequest} from '../../data/types';
 import {DeliveryService} from '../../service/delivery.service';
 import {GeoServiceService} from '../../service/geo-service.service';
 import {MultiLineString} from 'geojson';
@@ -150,7 +150,21 @@ export class MapComponent implements OnInit {
   private async getCoordinatesFromORS(coordinates: LatLng[]) {
     const list: [number, number][] = coordinates.map(({ lat, lng }) => [lng, lat]);
 
-    const opsCoordinates = await this._geoService.getItinerary(list);
+    const bodyForOpt = this.getBodyForOptimization(list);
+    const opsCoordinates = await  this._geoService.getItinerary(await this._geoService.getItineraryTourOptimized(bodyForOpt));
     this.layer.set(opsCoordinates);
+  }
+
+
+  private getJobs(tab:[number,number][]):Job[] {
+    return tab.map((x,i)=>{return {id:i+1,service:300,delivery:[1],location:x,skills:[1]}});
+  }
+
+  private getVehicles():Vehicle[] {
+    return [{id:1,profile:"driving-car",start:[5.7369725,45.14852],end:[5.7369725,45.14852],capacity:[4],skills:[1,14]}];
+  }
+
+  private getBodyForOptimization(list:[number,number][]):OptimizationBodyRequest{
+    return {jobs:this.getJobs(list),vehicles:this.getVehicles()};
   }
 }

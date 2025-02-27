@@ -153,6 +153,31 @@ export interface Tour {
   delivers: readonly Employee[]
 }
 
+export interface Job {
+  id: number;
+  service: number;
+  delivery: number[];
+  location: [number, number];
+  skills: number[];
+  time_windows?: [number, number][];
+}
+
+export interface Vehicle {
+  id: number;
+  profile: string;
+  start:[number,number];
+  end:[number,number];
+  capacity:[number];
+  skills: number[];
+  time_windows?: [number, number][];
+}
+
+export interface OptimizationBodyRequest{
+  jobs : Job[];
+  vehicles : Vehicle[];
+}
+
+
 export const orderSchema = zod.object({
   jdds: zod.string(),
   reference: zod.string(),

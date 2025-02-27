@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {GeoJSON2DMultiLineString, GeoJSON2DPointSchema, GeoJSONLineStringSchema} from 'zod-geojson';
 import {LatLng} from 'leaflet';
 import {GeoCodePropertiesSchema, getParserJSONFeatureCollection, PropertiesSchema} from '../data/geojsondef';
-
+import {OptimizationBodyRequest} from '../data/types';
 
 @Injectable({
   providedIn: 'root'
@@ -92,7 +92,7 @@ export class GeoServiceService {
     return Promise.resolve(donn);
   }
 
-  async getItineraryTourOptimized():  Promise<[number,number][]> {
+  async getItineraryTourOptimized(body:OptimizationBodyRequest):  Promise<[number,number][]> {
     var donn;
     var fetr = await fetch("https://api.openrouteservice.org/optimization", {
       method: 'POST',
@@ -101,7 +101,7 @@ export class GeoServiceService {
         'Authorization': '5b3ce3597851110001cf62481247ba530f0e48a280184e6aee1e9794',
         'Content-Type': 'application/json; charset=utf-8'
       },
-      body: '{"jobs":[{"id":1,"service":300,"delivery":[1],"location":[1.98465,48.70329],"skills":[1],"time_windows":[[32400,36000]]},{"id":2,"service":300,"delivery":[1],"location":[2.03655,48.61128],"skills":[1]},{"id":3,"service":300,"delivery":[1],"location":[2.39719,49.07611],"skills":[2]},{"id":4,"service":300,"delivery":[1],"location":[2.41808,49.22619],"skills":[2]},{"id":5,"service":300,"delivery":[1],"location":[2.28325,48.5958],"skills":[14]},{"id":6,"service":300,"delivery":[1],"location":[2.89357,48.90736],"skills":[14]}],"vehicles":[{"id":1,"profile":"driving-car","start":[2.35044,48.71764],"end":[2.35044,48.71764],"capacity":[4],"skills":[1,14],"time_window":[28800,43200]}]}'
+      body: JSON.stringify(body, null, 2)
     });
     if (fetr.status == 200) {
       donn = await fetr.json();
