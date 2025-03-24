@@ -2,7 +2,7 @@ import {Component, computed, inject, model, OnInit, signal} from '@angular/core'
 import { FormsModule } from '@angular/forms';
 import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import { Icon, icon, LatLng, latLng, Layer, MapOptions, marker, Marker, polyline, Polyline, tileLayer } from 'leaflet';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Tour, Job, Vehicle, OptimizationBodyRequest} from '../../data/types';
 import {DeliveryService} from '../../service/delivery.service';
 import {GeoServiceService} from '../../service/geo-service.service';
@@ -172,4 +172,12 @@ export class MapComponent implements OnInit {
   private getBodyForOptimization(list:[number,number][]):OptimizationBodyRequest{
     return {jobs:this.getJobs(list),vehicles:this.getVehicles()};
   }
+
+
+
+    private _router = inject(Router);
+    protected onViewMap() {
+    this._router.navigate(["/map", this._id()]);
+  }
+
 }

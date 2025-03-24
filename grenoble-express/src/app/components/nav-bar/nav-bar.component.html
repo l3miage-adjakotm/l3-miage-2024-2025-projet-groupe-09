@@ -6,9 +6,15 @@
 <!--      </div>-->
       <section class="button-section">
         <div class="example-button-container">
-            <a mat-button routerLink="/" class="custom-button">
+            <a mat-button routerLink="/map" (click)="onViewMap()" class="custom-button">
               <mat-icon class="button-icon">home</mat-icon>
               Dashboard
+            </a>
+        </div>
+        <div class="example-button-container">
+            <a mat-button routerLink="/" class="custom-button">
+              <mat-icon class="button-icon">assignment_turned_in</mat-icon>
+              Crée des tournées
             </a>
         </div>
         <div class="example-button-container">
