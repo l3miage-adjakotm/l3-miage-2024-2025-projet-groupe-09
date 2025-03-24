@@ -124,4 +124,10 @@ export class CreateTourComponent implements OnInit {
     this.onNoClick();
     this._router.navigateByUrl("liste-tournees");
   }
+
+  private _id = signal<string>("");
+
+  protected onViewMap() {
+    this._router.navigate(["/map", this._id()]);
+  }
 }
