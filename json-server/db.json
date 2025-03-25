@@ -3260,7 +3260,7 @@
     {
       "jdds": "jdd0",
       "reference": "c001",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "04/01/2024, 16:00",
       "note": null,
       "commentaire": null,
@@ -3534,7 +3534,7 @@
     {
       "jdds": "jdd0",
       "reference": "c020",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/02/2024, 03:30",
       "note": null,
       "commentaire": null,
@@ -3549,7 +3549,7 @@
     {
       "jdds": "jdd0",
       "reference": "c021",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/02/2024, 03:30",
       "note": null,
       "commentaire": null,
@@ -4405,7 +4405,7 @@
     {
       "jdds": "jdd0",
       "reference": "c086",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/03/2024, 17:00",
       "note": null,
       "commentaire": null,
@@ -4631,7 +4631,7 @@
     {
       "jdds": "jdd0",
       "reference": "c103",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "12/03/2024, 13:30",
       "note": null,
       "commentaire": null,
@@ -4644,7 +4644,7 @@
     {
       "jdds": "jdd0",
       "reference": "c104",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "12/03/2024, 14:30",
       "note": null,
       "commentaire": null,
@@ -4657,7 +4657,7 @@
     {
       "jdds": "jdd0",
       "reference": "c105",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "12/03/2024, 14:30",
       "note": null,
       "commentaire": null,
@@ -4670,7 +4670,7 @@
     {
       "jdds": "jdd0",
       "reference": "c106",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "12/03/2024, 14:30",
       "note": null,
       "commentaire": null,
@@ -4709,7 +4709,7 @@
     {
       "jdds": "jdd0",
       "reference": "c109",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "13/03/2024, 19:00",
       "note": null,
       "commentaire": null,
@@ -5030,7 +5030,7 @@
     {
       "jdds": "jdd0",
       "reference": "c133",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "19/03/2024, 13:00",
       "note": null,
       "commentaire": null,
@@ -5043,7 +5043,7 @@
     {
       "jdds": "jdd0",
       "reference": "c134",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "19/03/2024, 14:30",
       "note": null,
       "commentaire": null,
@@ -5056,7 +5056,7 @@
     {
       "jdds": "jdd0",
       "reference": "c135",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "19/03/2024, 14:30",
       "note": null,
       "commentaire": null,
@@ -5069,7 +5069,7 @@
     {
       "jdds": "jdd0",
       "reference": "c136",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "20/03/2024, 13:30",
       "note": null,
       "commentaire": null,
@@ -5455,7 +5455,7 @@
     {
       "jdds": "jdd0",
       "reference": "c165",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 08:30",
       "note": null,
       "commentaire": null,
@@ -5468,7 +5468,7 @@
     {
       "jdds": "jdd0",
       "reference": "c166",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 09:00",
       "note": null,
       "commentaire": null,
@@ -5711,7 +5711,7 @@
     {
       "jdds": "jdd0",
       "reference": "c184",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 18:00",
       "note": null,
       "commentaire": null,
@@ -5832,7 +5832,7 @@
     {
       "jdds": "jdd0",
       "reference": "c193",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 18:30",
       "note": null,
       "commentaire": null,
@@ -5858,7 +5858,7 @@
     {
       "jdds": "jdd0",
       "reference": "c195",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 18:30",
       "note": null,
       "commentaire": null,
@@ -5965,7 +5965,7 @@
     {
       "jdds": "jdd0",
       "reference": "c203",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 20:00",
       "note": null,
       "commentaire": null,
@@ -6392,7 +6392,7 @@
     {
       "jdds": "jdd0",
       "reference": "c235",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 23:00",
       "note": null,
       "commentaire": null,
@@ -6512,7 +6512,7 @@
     {
       "jdds": "jdd0",
       "reference": "c244",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 23:30",
       "note": null,
       "commentaire": null,
@@ -6525,7 +6525,7 @@
     {
       "jdds": "jdd0",
       "reference": "c245",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "01/04/2024, 23:30",
       "note": null,
       "commentaire": null,
@@ -6579,7 +6579,7 @@
     {
       "jdds": "jdd0",
       "reference": "c249",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 00:30",
       "note": null,
       "commentaire": null,
@@ -6776,7 +6776,7 @@
     {
       "jdds": "jdd0",
       "reference": "c264",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 03:30",
       "note": null,
       "commentaire": null,
@@ -6789,7 +6789,7 @@
     {
       "jdds": "jdd0",
       "reference": "c265",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 04:00",
       "note": null,
       "commentaire": null,
@@ -6925,7 +6925,7 @@
     {
       "jdds": "jdd0",
       "reference": "c275",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 07:00",
       "note": null,
       "commentaire": null,
@@ -6938,7 +6938,7 @@
     {
       "jdds": "jdd0",
       "reference": "c276",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 07:00",
       "note": null,
       "commentaire": null,
@@ -7205,7 +7205,7 @@
     {
       "jdds": "jdd0",
       "reference": "c296",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 11:00",
       "note": null,
       "commentaire": null,
@@ -7219,7 +7219,7 @@
     {
       "jdds": "jdd0",
       "reference": "c297",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 11:00",
       "note": null,
       "commentaire": null,
@@ -7601,7 +7601,7 @@
     {
       "jdds": "jdd0",
       "reference": "c325",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "09/04/2024, 04:00",
       "note": null,
       "commentaire": null,
@@ -7618,7 +7618,7 @@
     {
       "jdds": "jdd0",
       "reference": "c326",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "09/04/2024, 04:00",
       "note": null,
       "commentaire": null,
@@ -7737,7 +7737,7 @@
     {
       "jdds": "jdd0",
       "reference": "c335",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "09/04/2024, 06:00",
       "note": null,
       "commentaire": null,
@@ -7815,7 +7815,7 @@
     {
       "jdds": "jdd0",
       "reference": "c341",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "09/04/2024, 09:30",
       "note": null,
       "commentaire": null,
@@ -7828,7 +7828,7 @@
     {
       "jdds": "jdd0",
       "reference": "c342",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "09/04/2024, 09:30",
       "note": null,
       "commentaire": null,
@@ -8311,7 +8311,7 @@
     {
       "jdds": "jdd0",
       "reference": "c378",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 08:30",
       "note": null,
       "commentaire": null,
@@ -8325,7 +8325,7 @@
     {
       "jdds": "jdd0",
       "reference": "c379",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 08:30",
       "note": null,
       "commentaire": null,
@@ -8368,7 +8368,7 @@
     {
       "jdds": "jdd0",
       "reference": "c382",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 10:30",
       "note": null,
       "commentaire": null,
@@ -8381,7 +8381,7 @@
     {
       "jdds": "jdd0",
       "reference": "c383",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "05/04/2024, 10:30",
       "note": null,
       "commentaire": null,
@@ -8451,7 +8451,7 @@
     {
       "jdds": "jdd0",
       "reference": "c388",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "08/04/2024, 12:00",
       "note": null,
       "commentaire": null,
@@ -8718,7 +8718,7 @@
     {
       "jdds": "jdd0",
       "reference": "c407",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "15/04/2024, 15:30",
       "note": null,
       "commentaire": null,
@@ -8732,7 +8732,7 @@
     {
       "jdds": "jdd0",
       "reference": "c408",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "15/04/2024, 15:30",
       "note": null,
       "commentaire": null,
@@ -8748,7 +8748,7 @@
     {
       "jdds": "jdd0",
       "reference": "c409",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "15/04/2024, 16:00",
       "note": null,
       "commentaire": null,
@@ -8763,7 +8763,7 @@
     {
       "jdds": "jdd0",
       "reference": "c410",
-      "etat": "ouverte",
+      "etat": "planifiee",
       "date_de_creation": "16/04/2024, 17:00",
       "note": null,
       "commentaire": null,
@@ -9605,6 +9605,661 @@
           "emploi": "livreur",
           "entrepot": "Grenis",
           "id": "9f25"
+        }
+      ]
+    },
+    {
+      "id": "ec79",
+      "name": "all",
+      "orders": [
+        {
+          "reference": "c001",
+          "etat": "planifiee",
+          "date_de_creation": "04/01/2024, 16:00",
+          "selected": true,
+          "client": {
+            "email": "amartin@wan.fr",
+            "prenom": "agathe",
+            "nom": "MARTIN",
+            "adresse": "332 Route de la Jars",
+            "code_postal": 38950,
+            "ville": "Quaix-en-Chartreuse"
+          }
+        },
+        {
+          "reference": "c020",
+          "etat": "planifiee",
+          "date_de_creation": "05/02/2024, 03:30",
+          "selected": true,
+          "client": {
+            "email": "lguyot@lp.net",
+            "prenom": "louna",
+            "nom": "GUYOT",
+            "adresse": "17 Avenue du Vercors",
+            "code_postal": 38170,
+            "ville": "Seyssinet-Pariset"
+          }
+        },
+        {
+          "reference": "c021",
+          "etat": "planifiee",
+          "date_de_creation": "05/02/2024, 03:30",
+          "selected": true,
+          "client": {
+            "email": "emarchand@ok.fr",
+            "prenom": "elisa",
+            "nom": "MARCHAND",
+            "adresse": "7 Ensemble immobilier du Domaine des Plantées",
+            "code_postal": 38330,
+            "ville": "Biviers"
+          }
+        },
+        {
+          "reference": "c086",
+          "etat": "planifiee",
+          "date_de_creation": "05/03/2024, 17:00",
+          "selected": true,
+          "client": {
+            "email": "lmartinez@or.fr",
+            "prenom": "lucas",
+            "nom": "MARTINEZ",
+            "adresse": "34 Chemin de Cressanet",
+            "code_postal": 38330,
+            "ville": "Saint-Ismier"
+          }
+        },
+        {
+          "reference": "c103",
+          "etat": "planifiee",
+          "date_de_creation": "12/03/2024, 13:30",
+          "selected": true,
+          "client": {
+            "email": "mjean@lp.net",
+            "prenom": "marie",
+            "nom": "JEAN",
+            "adresse": "486 Route de Laliarey",
+            "code_postal": 38360,
+            "ville": "Engins"
+          }
+        },
+        {
+          "reference": "c104",
+          "etat": "planifiee",
+          "date_de_creation": "12/03/2024, 14:30",
+          "selected": true,
+          "client": {
+            "email": "pnicolas@or.fr",
+            "prenom": "pauline",
+            "nom": "NICOLAS",
+            "adresse": "7c Avenue de Kimberley",
+            "code_postal": 38130,
+            "ville": "Échirolles"
+          }
+        },
+        {
+          "reference": "c105",
+          "etat": "planifiee",
+          "date_de_creation": "12/03/2024, 14:30",
+          "selected": true,
+          "client": {
+            "email": "aibrahim@but.org",
+            "prenom": "amir",
+            "nom": "IBRAHIM",
+            "adresse": "6ter Rue de Chamechaude",
+            "code_postal": 38360,
+            "ville": "Sassenage"
+          }
+        },
+        {
+          "reference": "c106",
+          "etat": "planifiee",
+          "date_de_creation": "12/03/2024, 14:30",
+          "selected": true,
+          "client": {
+            "email": "lmoreau@wan.fr",
+            "prenom": "lucas",
+            "nom": "MOREAU",
+            "adresse": "777 Route de la Mearie",
+            "code_postal": 38950,
+            "ville": "Quaix-en-Chartreuse"
+          }
+        },
+        {
+          "reference": "c109",
+          "etat": "planifiee",
+          "date_de_creation": "13/03/2024, 19:00",
+          "selected": true,
+          "client": {
+            "email": "lmoreau@wan.fr",
+            "prenom": "lucas",
+            "nom": "MOREAU",
+            "adresse": "777 Route de la Mearie",
+            "code_postal": 38950,
+            "ville": "Quaix-en-Chartreuse"
+          }
+        },
+        {
+          "reference": "c133",
+          "etat": "planifiee",
+          "date_de_creation": "19/03/2024, 13:00",
+          "selected": true,
+          "client": {
+            "email": "smercier@sfr.fr",
+            "prenom": "simon",
+            "nom": "MERCIER",
+            "adresse": "278 Route de Pontenin",
+            "code_postal": 38560,
+            "ville": "Jarrie"
+          }
+        },
+        {
+          "reference": "c134",
+          "etat": "planifiee",
+          "date_de_creation": "19/03/2024, 14:30",
+          "selected": true,
+          "client": {
+            "email": "tbrun@or.fr",
+            "prenom": "tom",
+            "nom": "BRUN",
+            "adresse": "780 Chemin de la Délaissée",
+            "code_postal": 38420,
+            "ville": "Murianette"
+          }
+        },
+        {
+          "reference": "c135",
+          "etat": "planifiee",
+          "date_de_creation": "19/03/2024, 14:30",
+          "selected": true,
+          "client": {
+            "email": "lbrunet@gm.fr",
+            "prenom": "léo",
+            "nom": "BRUNET",
+            "adresse": "6 Rue Charles Morel",
+            "code_postal": 38420,
+            "ville": "Domène"
+          }
+        },
+        {
+          "reference": "c136",
+          "etat": "planifiee",
+          "date_de_creation": "20/03/2024, 13:30",
+          "selected": true,
+          "client": {
+            "email": "emeyer1@or.fr",
+            "prenom": "estelle",
+            "nom": "MEYER",
+            "adresse": "500 Impasse de Montperet",
+            "code_postal": 38410,
+            "ville": "Vaulnaveys-le-Haut"
+          }
+        },
+        {
+          "reference": "c165",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 08:30",
+          "selected": true,
+          "client": {
+            "email": "clefebvre@lp.net",
+            "prenom": "céleste",
+            "nom": "LEFEBVRE",
+            "adresse": "19 Rue des Déportés du 11 Novembre 1943",
+            "code_postal": 38100,
+            "ville": "Grenoble"
+          }
+        },
+        {
+          "reference": "c166",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 09:00",
+          "selected": true,
+          "client": {
+            "email": "llemaitre@bbox.fr",
+            "prenom": "léna",
+            "nom": "LEMAITRE",
+            "adresse": "12 avenue de la monta",
+            "code_postal": 38120,
+            "ville": "Saint-Égrève"
+          }
+        },
+        {
+          "reference": "c184",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 18:00",
+          "selected": true,
+          "client": {
+            "email": "lcharles@sfr.fr",
+            "prenom": "liam",
+            "nom": "CHARLES",
+            "adresse": "13 Rue Raoul Blanchard",
+            "code_postal": 38400,
+            "ville": "Saint-Martin-d'Hères"
+          }
+        },
+        {
+          "reference": "c193",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 18:30",
+          "selected": true,
+          "client": {
+            "email": "hcho@brt.fr",
+            "prenom": "soo",
+            "nom": "CHO",
+            "adresse": "22 Chemin des Batteries",
+            "code_postal": 38700,
+            "ville": "La Tronche"
+          }
+        },
+        {
+          "reference": "c195",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 18:30",
+          "selected": true,
+          "client": {
+            "email": "ysaito@brt.fr",
+            "prenom": "mai",
+            "nom": "SAITO",
+            "adresse": "535 Route de Venon",
+            "code_postal": 38410,
+            "ville": "Saint-Martin-d'Uriage"
+          }
+        },
+        {
+          "reference": "c203",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 20:00",
+          "selected": true,
+          "client": {
+            "email": "cdupuis1@gm.fr",
+            "prenom": "claire",
+            "nom": "DUPUIT",
+            "adresse": "55 Clos des Franquieres",
+            "code_postal": 38330,
+            "ville": "Biviers"
+          }
+        },
+        {
+          "reference": "c235",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 23:00",
+          "selected": true,
+          "client": {
+            "email": "lmasson@lp.net",
+            "prenom": "léandro",
+            "nom": "MASSON",
+            "adresse": "20 Allée de la Calandre",
+            "code_postal": 38420,
+            "ville": "Domène"
+          }
+        },
+        {
+          "reference": "c244",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 23:30",
+          "selected": true,
+          "client": {
+            "email": "mabdullah@but.org",
+            "prenom": "salim",
+            "nom": "ABDULLAH",
+            "adresse": "route de quaix",
+            "code_postal": 38120,
+            "ville": "Saint-Égrève"
+          }
+        },
+        {
+          "reference": "c245",
+          "etat": "planifiee",
+          "date_de_creation": "01/04/2024, 23:30",
+          "selected": true,
+          "client": {
+            "email": "lbarbier1@lp.net",
+            "prenom": "lola",
+            "nom": "BARBIER",
+            "adresse": "1 Rue du Saint-eynard",
+            "code_postal": 38240,
+            "ville": "Meylan"
+          }
+        },
+        {
+          "reference": "c249",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 00:30",
+          "selected": true,
+          "client": {
+            "email": "jguie@or.fr",
+            "prenom": "julie",
+            "nom": "GUILLAUME",
+            "adresse": "1965 Route de Gières",
+            "code_postal": 38410,
+            "ville": "Saint-Martin-d'Uriage"
+          }
+        },
+        {
+          "reference": "c264",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 03:30",
+          "selected": true,
+          "client": {
+            "email": "jblanc@hot.fr",
+            "prenom": "julie",
+            "nom": "BLANC",
+            "adresse": "371 Chemin du Replat",
+            "code_postal": 38950,
+            "ville": "Saint-Martin-le-Vinoux"
+          }
+        },
+        {
+          "reference": "c265",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 04:00",
+          "selected": true,
+          "client": {
+            "email": "lboucher@sfr.fr",
+            "prenom": "lilou",
+            "nom": "BOUCHER",
+            "adresse": "167 Chemin de la Fonderie",
+            "code_postal": 38410,
+            "ville": "Saint-Martin-d'Uriage"
+          }
+        },
+        {
+          "reference": "c275",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 07:00",
+          "selected": true,
+          "client": {
+            "email": "rahmed@m6.com",
+            "prenom": "samira",
+            "nom": "AHMED",
+            "adresse": "258 Chemin de Bordeliere",
+            "code_postal": 38700,
+            "ville": "Le Sappey-en-Chartreuse"
+          }
+        },
+        {
+          "reference": "c276",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 07:00",
+          "selected": true,
+          "client": {
+            "email": "ttan@m6.com",
+            "prenom": "wei",
+            "nom": "TAN",
+            "adresse": "8 Allee de la Duatiere",
+            "code_postal": 38640,
+            "ville": "Claix"
+          }
+        },
+        {
+          "reference": "c296",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 11:00",
+          "selected": true,
+          "client": {
+            "email": "slemaitre@sfr.fr",
+            "prenom": "sacha",
+            "nom": "LEMAITRE",
+            "adresse": "100 Chemin de la Croix Verte",
+            "code_postal": 38330,
+            "ville": "Montbonnot-Saint-Martin"
+          }
+        },
+        {
+          "reference": "c297",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 11:00",
+          "selected": true,
+          "client": {
+            "email": "jlefebvre@or.fr",
+            "prenom": "juliette",
+            "nom": "LEFEBVRE",
+            "adresse": "710 Rue Aristide Berges",
+            "code_postal": 38330,
+            "ville": "Montbonnot-Saint-Martin"
+          }
+        },
+        {
+          "reference": "c325",
+          "etat": "planifiee",
+          "date_de_creation": "09/04/2024, 04:00",
+          "selected": true,
+          "client": {
+            "email": "jdurand@gm.fr",
+            "prenom": "julien",
+            "nom": "DURAND",
+            "adresse": "54 Chemin de Chantemerle",
+            "code_postal": 38700,
+            "ville": "La Tronche"
+          }
+        },
+        {
+          "reference": "c326",
+          "etat": "planifiee",
+          "date_de_creation": "09/04/2024, 04:00",
+          "selected": true,
+          "client": {
+            "email": "thenri@or.fr",
+            "prenom": "thomas",
+            "nom": "HENRI",
+            "adresse": "2 Route de Villard de Lans",
+            "code_postal": 38360,
+            "ville": "Engins"
+          }
+        },
+        {
+          "reference": "c335",
+          "etat": "planifiee",
+          "date_de_creation": "09/04/2024, 06:00",
+          "selected": true,
+          "client": {
+            "email": "pnicolas@or.fr",
+            "prenom": "pauline",
+            "nom": "NICOLAS",
+            "adresse": "7c Avenue de Kimberley",
+            "code_postal": 38130,
+            "ville": "Échirolles"
+          }
+        },
+        {
+          "reference": "c341",
+          "etat": "planifiee",
+          "date_de_creation": "09/04/2024, 09:30",
+          "selected": true,
+          "client": {
+            "email": "llerouge@free.fr",
+            "prenom": "léonie",
+            "nom": "LEROUGE",
+            "adresse": "175 Chemin de Pragnier",
+            "code_postal": 38320,
+            "ville": "Herbeys"
+          }
+        },
+        {
+          "reference": "c342",
+          "etat": "planifiee",
+          "date_de_creation": "09/04/2024, 09:30",
+          "selected": true,
+          "client": {
+            "email": "abois@lp.net",
+            "prenom": "amanda",
+            "nom": "BOIS",
+            "adresse": "10 Chemin du Foulet",
+            "code_postal": 38800,
+            "ville": "Champagnier"
+          }
+        },
+        {
+          "reference": "c378",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 08:30",
+          "selected": true,
+          "client": {
+            "email": "cleclerc@wan.fr",
+            "prenom": "célestin",
+            "nom": "LECLERC",
+            "adresse": "8 Rue de l'Argentière",
+            "code_postal": 38600,
+            "ville": "Fontaine"
+          }
+        },
+        {
+          "reference": "c379",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 08:30",
+          "selected": true,
+          "client": {
+            "email": "jeyer@or.fr",
+            "prenom": "julie",
+            "nom": "MEYER",
+            "adresse": "15 Pajon",
+            "code_postal": 38700,
+            "ville": "Corenc"
+          }
+        },
+        {
+          "reference": "c382",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 10:30",
+          "selected": true,
+          "client": {
+            "email": "rlambert@lp.net",
+            "prenom": "romane",
+            "nom": "LAMBERT",
+            "adresse": "156 Chemin de Montavit",
+            "code_postal": 38320,
+            "ville": "Bresson"
+          }
+        },
+        {
+          "reference": "c383",
+          "etat": "planifiee",
+          "date_de_creation": "05/04/2024, 10:30",
+          "selected": true,
+          "client": {
+            "email": "mmichel@bbox.fr",
+            "prenom": "mélina",
+            "nom": "MICHEL",
+            "adresse": "13 Allée des Châtaigniers",
+            "code_postal": 38130,
+            "ville": "Échirolles"
+          }
+        },
+        {
+          "reference": "c388",
+          "etat": "planifiee",
+          "date_de_creation": "08/04/2024, 12:00",
+          "selected": true,
+          "client": {
+            "email": "chenry@hot.fr",
+            "prenom": "clara",
+            "nom": "HENRY",
+            "adresse": "131 Chemin du Bois",
+            "code_postal": 38330,
+            "ville": "Saint-Ismier"
+          }
+        },
+        {
+          "reference": "c407",
+          "etat": "planifiee",
+          "date_de_creation": "15/04/2024, 15:30",
+          "selected": true,
+          "client": {
+            "email": "bmorel@or.fr",
+            "prenom": "bastien",
+            "nom": "MOREL",
+            "adresse": "19 Chemin du Petit Bois",
+            "code_postal": 38360,
+            "ville": "Sassenage"
+          }
+        },
+        {
+          "reference": "c408",
+          "etat": "planifiee",
+          "date_de_creation": "15/04/2024, 15:30",
+          "selected": true,
+          "client": {
+            "email": "lguillaume@lp.net",
+            "prenom": "léa",
+            "nom": "GUILLAUME",
+            "adresse": "Chemin des Perrets",
+            "code_postal": 38420,
+            "ville": "Murianette"
+          }
+        },
+        {
+          "reference": "c409",
+          "etat": "planifiee",
+          "date_de_creation": "15/04/2024, 16:00",
+          "selected": true,
+          "client": {
+            "email": "hkim@brt.fr",
+            "prenom": "hana",
+            "nom": "KIM",
+            "adresse": "2 Chemin de Noyarey",
+            "code_postal": 38700,
+            "ville": "La Tronche"
+          }
+        },
+        {
+          "reference": "c410",
+          "etat": "planifiee",
+          "date_de_creation": "16/04/2024, 17:00",
+          "selected": true,
+          "client": {
+            "email": "tdufour@sfr.fr",
+            "prenom": "théo",
+            "nom": "DUFOUR",
+            "adresse": "18 Rue des Nations",
+            "code_postal": 38400,
+            "ville": "Saint-Martin-d'Hères"
+          }
+        }
+      ],
+      "date": "24/03/2025",
+      "truck": {
+        "jdds": [
+          "jdd0",
+          "jdd1"
+        ],
+        "code": "cg456",
+        "immatriculation": "XY-456-ZT",
+        "latitude": null,
+        "longitude": null,
+        "kilometrage": 75023,
+        "entrepot": "Grenis",
+        "type": "Transporter",
+        "id": "da00"
+      },
+      "delivers": [
+        {
+          "jdds": [
+            "jdd0",
+            "jdd1"
+          ],
+          "trigramme": "EBD",
+          "prenom": "élisa",
+          "nom": "BERAND",
+          "photo": "Selection_999(635).jpg",
+          "telephone": "0678541296",
+          "email": "ebd@mobilis.fr",
+          "emploi": "livreur",
+          "entrepot": "Grenis",
+          "id": "2608"
+        },
+        {
+          "jdds": [
+            "jdd0",
+            "jdd1"
+          ],
+          "trigramme": "SWL",
+          "prenom": "sophie",
+          "nom": "WHEEL",
+          "photo": "Selection_999(634).jpg",
+          "telephone": "0685698568",
+          "email": "swl@mobilis.fr",
+          "emploi": "livreur",
+          "entrepot": "Grenis",
+          "id": "2df3"
         }
       ]
     }
